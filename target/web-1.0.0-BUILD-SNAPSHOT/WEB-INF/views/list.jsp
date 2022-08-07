@@ -10,27 +10,55 @@
 <head>
     <title>자유게시판 화면</title>
     <style>
-        .t_ab1, .t_ab2, .t_ab3  {background: #6f42c1; width: 50%; margin: 0; text-align: center}
-        /*.accordion-button {margin: auto}*/
+        /*.t_ab1 {background: white; width: 50%; margin: 0; text-align: center; border-collapse: collapse;}
+        .t_ab1-1 {background: white; margin: auto;}*/
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <h1>공부하자!!!</h1>
-        <table class="t_ab1">
-            <tr>
-                <th class="t_ab1-1"> No.</th><th>제목</th><th>내용</th>
-            </tr>
+<header>
+    <h1>자유게시판 <a href="home.jsp">Home</a></h1>
+</header>
+<aside>
+    <h4>게시판 목록</h4>
+    <ul>
+        <li><a target="iframe1" href="home.jsp">Home test</a></li> <%-- target iframe으로 지정하여 링크를 클릭하면 새창으로 띄운다.--%>
+    </ul>
+</aside>
+<nav>
+    <ul>
+        <li><a href="home.jsp">Home</a></li>
+        <li><a href="home.jsp">test2</a></li>
+        <li><a href="home.jsp">test3</a></li>
+        <li><a href="home.jsp">test4</a></li>
+    </ul>
+</nav>
+<%--<div class="container">
+    <div id="header">
+        <h1>자유게시판</h1>
+    </div>
+    <nav>
+        <h1>nav테스트</h1>
+    </nav>
+    <div id="content">
+        <table class="t_ab1" border="1">
+            <th>No.</th>
+            <th>제목</th>
+            <th>내용</th>
+
+        <tr class="t_ab1-1">
+            <td> 1</td>
+            <td>테스트</td>
+            <td>테스트 내용</td>
+        </tr>
         </table>
     </div>
     <div class="row1">
 
     </div>
-    <div align="center">
+    <div align="auto" id="footer">
         <button class="accordion-button"> 글쓰기</button>
     </div>
 
-</div>
+</div>--%>
 </body>
 </html>
