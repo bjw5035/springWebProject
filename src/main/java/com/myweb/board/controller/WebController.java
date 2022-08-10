@@ -29,24 +29,25 @@ public class WebController {
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
 
-/*
-
+	/*
+		메인페이지
+		 * */
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String getHome() throws Exception{
-		
+	public String getHome() throws Exception {
+
 		logger.info("Login GET Controller >>>>>>>>>");
 		return "/home";
 	}
-	
-	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public ModelAndView postHome(Model model, ModelAndView modelAndView ,HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
-		
+
+/*	@RequestMapping(value = "/home", method = RequestMethod.POST)
+	public ModelAndView postHome(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
+
 		logger.info("Login POST Controller >>>>>>>>>");
 
-		String home = webservice.home(vo);
+//		String home = webservice.home(vo);
 
 		ModelAndView mav = new ModelAndView();
-		if(home == null) {
+		if (mav == null) {
 			//			session.setAttribute("msg", null);
 			mav.setViewName("redirect:/home");
 		} else {
@@ -56,10 +57,7 @@ public class WebController {
 		}
 		return mav;
 
-	}
-*/
-
-
+	}*/
 
 	/*
 	회원가입
@@ -157,7 +155,7 @@ public class WebController {
 	}
 
 	/*
-	메인페이지
+	공지사항
 	 * */
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String GetMain(Model model, Map<Object, String> map) throws Exception {
