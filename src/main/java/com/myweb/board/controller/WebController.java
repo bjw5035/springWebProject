@@ -28,6 +28,17 @@ public class WebController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public String getWelcome() throws Exception {
+
+		return "/welcome";
+	}
+
+	@RequestMapping(value = "/welcome", method = RequestMethod.POST)
+	public String postWelcome() throws Exception {
+
+		return "/welcome";
+	}
 
 	/*
 		메인페이지
@@ -38,8 +49,7 @@ public class WebController {
 		logger.info("Login GET Controller >>>>>>>>>");
 		return "/home";
 	}
-
-/*	@RequestMapping(value = "/home", method = RequestMethod.POST)
+	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public ModelAndView postHome(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
 
 		logger.info("Login POST Controller >>>>>>>>>");
@@ -57,7 +67,7 @@ public class WebController {
 		}
 		return mav;
 
-	}*/
+	}
 
 	/*
 	회원가입
