@@ -28,6 +28,10 @@ public class WebController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
+
+	/*
+	 * Welcome 페이지
+	 * */
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String getWelcome() throws Exception {
 
@@ -40,67 +44,9 @@ public class WebController {
 		return "/welcome";
 	}
 
-	/*
-		메인페이지
-		 * */
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String getHome() throws Exception {
-
-		logger.info("Login GET Controller >>>>>>>>>");
-		return "/home";
-	}
-	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public ModelAndView postHome(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
-
-		logger.info("Login POST Controller >>>>>>>>>");
-
-//		String home = webservice.home(vo);
-
-		ModelAndView mav = new ModelAndView();
-		if (mav == null) {
-			//			session.setAttribute("msg", null);
-			mav.setViewName("redirect:/home");
-		} else {
-			//			session.setAttribute("login", login);
-			mav.setViewName("redirect:/main");
-
-		}
-		return mav;
-
-	}
 
 	/*
-	회원가입
-	 * */
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public ModelAndView GetwebJoin(Model model, Map<Object, String> map) throws Exception {
-		
-		logger.info("Join POST Controller >>>>>>>>>");
-
-		return new ModelAndView("join");
-	}
-
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public ModelAndView PostwebJoin(Model model, MemberVO vo, RedirectAttributes rttr) throws Exception {
-		
-//		logger.info("Join POST Controller >>>>>>>>>");
-		System.out.println("Join post Controller >>>>");
-
-		int rs = webservice.insertJoin(vo);
-
-		ModelAndView mav = new ModelAndView();
-		if(rs == 1) {
-			mav.setViewName("login");
-		} else {
-			mav.setViewName("redirect:/join");
-		}
-
-		return mav;
-	}
-
-
-	/* 로그인
-	 * 
+	 * 로그인
 	 *  1. 다른 패스워드 입력해도 로그인하는 오류 해결 필요
 	 * */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -124,6 +70,66 @@ public class WebController {
 		} else {
 			session.setAttribute(login, "login");
 			mav.setViewName("main");
+
+		}
+		return mav;
+
+	}
+
+
+	/*
+	회원가입
+	 * */
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public ModelAndView GetwebJoin(Model model, Map<Object, String> map) throws Exception {
+
+		logger.info("Join POST Controller >>>>>>>>>");
+
+		return new ModelAndView("join");
+	}
+
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public ModelAndView PostwebJoin(Model model, MemberVO vo, RedirectAttributes rttr) throws Exception {
+
+//		logger.info("Join POST Controller >>>>>>>>>");
+		System.out.println("Join post Controller >>>>");
+
+		int rs = webservice.insertJoin(vo);
+
+		ModelAndView mav = new ModelAndView();
+		if(rs == 1) {
+			mav.setViewName("login");
+		} else {
+			mav.setViewName("redirect:/join");
+		}
+
+		return mav;
+	}
+
+
+	/*
+		메인페이지
+		 * */
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String getHome() throws Exception {
+
+		logger.info("main GET Controller >>>>>>>>>");
+		return "main";
+	}
+	@RequestMapping(value = "/main", method = RequestMethod.POST)
+	public ModelAndView postHome(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
+
+		logger.info("main POST Controller >>>>>>>>>");
+
+//		String home = webservice.home(vo);
+
+		ModelAndView mav = new ModelAndView();
+		if (mav == null) {
+			//			session.setAttribute("msg", null);
+			mav.setViewName("redirect:/main");
+		} else {
+			//			session.setAttribute("login", login);
+			mav.setViewName("redirect:/page_isErrorPage_error");
 
 		}
 		return mav;
@@ -167,19 +173,20 @@ public class WebController {
 	/*
 	공지사항
 	 * */
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String GetMain(Model model, Map<Object, String> map) throws Exception {
 
 		logger.info("main GET Controller >>>>>>>>>");
-		return "main";
+		return "/main";
 	}
 
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
 	public String PostMain(Model model, MemberVO vo, RedirectAttributes rttr) throws Exception {
 
 		logger.info("main POST Controller >>>>>>>>>");
-		return "main";
+		return "/main";
 	}
+*/
 
 	/*
 	자유 게시판
@@ -187,14 +194,14 @@ public class WebController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String GetList(Model model, Map<Object, String> map) throws Exception {
 
-		logger.info("main GET Controller >>>>>>>>>");
+		logger.info("list GET Controller >>>>>>>>>");
 		return "list";
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	public String PostList(Model model, MemberVO vo, RedirectAttributes rttr) throws Exception {
 
-		logger.info("main POST Controller >>>>>>>>>");
+		logger.info("list POST Controller >>>>>>>>>");
 		return "list";
 	}
 
