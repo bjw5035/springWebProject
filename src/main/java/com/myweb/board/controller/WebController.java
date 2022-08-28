@@ -64,7 +64,7 @@ public class WebController {
 
 		ModelAndView mav = new ModelAndView();
 		if (mav == null) {
-			//			session.setAttribute("msg", null);
+			//	session.setAttribute("msg", null);
 			mav.setViewName("redirect:/main");
 		} else {
 			//			session.setAttribute("login", login);
