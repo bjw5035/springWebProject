@@ -32,6 +32,7 @@ public class WebController {
 	/*
 	 * Welcome 페이지
 	 * */
+/*
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String getWelcome() throws Exception {
 
@@ -42,6 +43,36 @@ public class WebController {
 	public String postWelcome() throws Exception {
 
 		return "/welcome";
+	}
+*/
+
+	/*
+		메인페이지 및 home화면
+		 * */
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String getMain() throws Exception {
+
+		logger.info("main GET Controller >>>>>>>>>");
+		return "main";
+	}
+	@RequestMapping(value = "/main", method = RequestMethod.POST)
+	public ModelAndView postMain(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
+
+		logger.info("main POST Controller >>>>>>>>>");
+
+//		String login = WebService.login(vo);
+
+		ModelAndView mav = new ModelAndView();
+		if (mav == null) {
+			//			session.setAttribute("msg", null);
+			mav.setViewName("redirect:/main");
+		} else {
+			//			session.setAttribute("login", login);
+			mav.setViewName("redirect:/page_isErrorPage_error");
+
+		}
+		return mav;
+
 	}
 
 
@@ -66,10 +97,10 @@ public class WebController {
 
 		ModelAndView mav = new ModelAndView();
 		if(login == null) {
-			mav.setViewName("redirect:/login");
+			mav.setViewName("redirect:/main");
 		} else {
 			session.setAttribute(login, "login");
-			mav.setViewName("main");
+			mav.setViewName("/main");
 
 		}
 		return mav;
@@ -107,34 +138,6 @@ public class WebController {
 	}
 
 
-	/*
-		메인페이지
-		 * */
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String getHome() throws Exception {
-
-		logger.info("main GET Controller >>>>>>>>>");
-		return "main";
-	}
-	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public ModelAndView postHome(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
-
-		logger.info("main POST Controller >>>>>>>>>");
-
-//		String home = webservice.home(vo);
-
-		ModelAndView mav = new ModelAndView();
-		if (mav == null) {
-			//			session.setAttribute("msg", null);
-			mav.setViewName("redirect:/main");
-		} else {
-			//			session.setAttribute("login", login);
-			mav.setViewName("redirect:/page_isErrorPage_error");
-
-		}
-		return mav;
-
-	}
 
 
 	/*

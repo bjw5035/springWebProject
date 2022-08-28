@@ -2,26 +2,65 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Main</title>
+	<title>메인페이지</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#btnLogin").click(function () {
+				// 태그.val() : 태그에 입력된 값
+				// 태그.val('값') : 태그의 값을 변경
+				var id = $("id").val();
+				var pw = $("pw").val();
+				if (id == "") {
+					alert("아이디를 입력하세요.");
+					$("#id").focus(); // 입력 포커스 이동
+					return; // 함수 종료
+				}
+				if (pw == "") {
+					alert("패스워드를 입력하세요.");
+					$("pw").focus();
+					return;
+				}
+			});
+		});
+	</script>
 </head>
 <body>
+	<nav>
+		<div style="border: 1px dashed darkcyan; width: 300px; height: 200px; float: right;">
+			<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"> </label>
+			<label> 패스워드: <input type="password" id="pw"> </label>
 
-	<h2>게시판 리스트 페이지</h2>
-
-	<div>
-		<nav class="navbar navbar-brand navbar-dark bg-dark">
-			<header> 어제보다 나은사람이 되자!! </header>
-			<ou>test1
-				<li>litest</li>
-			</ou>
-			<li>testtttt</li>
-		</nav>
-	</div>
-
+			<button type="button" id="btnLogin" align="center">로그인</button>
+			<c:if test="${msg == 'failure'}">
+				<div style="color: red">
+					아이디 또는 비밀번호가 일치하지 않습니다.
+				</div>
+			</c:if>
+			<button type="button" id="btnJoin" align="center">회원가입</button>
+			<div>
+				<c:if test="${msg == 'logout'}">
+					<div style="color: red">
+						로그아웃 되었습니다.
+					</div>
+					<button type="button" id="logout" align="center">로그아웃</button>
+				</c:if>
+			</div>
+		</div>
+	</nav>
+	<nav>
+		<div>
+			<ul>
+				<ou>test1
+					<li>litest</li>
+				</ou>
+				<li>testtttt</li>
+			</ul>
+		</div>
+	</nav>
 	<div>
 		<table board="1">
 			<colgroup>
@@ -60,11 +99,6 @@
 			</tbody>
 		</table>
 	</div>
-	<div>
-		<a href="/web/myModify" /> 마이페이지 수정 화면 테스트
-	</div>
-	<div>
-		<button type="button" href="/web/upLoadFile.jsp">올리기</button>
-	</div>
+
 </body>
 </html>
