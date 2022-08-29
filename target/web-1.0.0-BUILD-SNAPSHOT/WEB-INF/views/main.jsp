@@ -30,10 +30,10 @@
 </head>
 <body>
 	<nav>
-		<div style="border: 1px dashed darkcyan; width: 300px; height: 200px; float: right;">
+		<form action="main.jsp" method="POST">
 			<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"> </label>
 			<label> 패스워드: <input type="password" id="pw"> </label>
-
+			
 			<button type="button" id="btnLogin" align="center">로그인</button>
 			<c:if test="${msg == 'failure'}">
 				<div style="color: red">
@@ -43,13 +43,14 @@
 			<button type="button" id="btnJoin" align="center">회원가입</button>
 			<div>
 				<c:if test="${msg == 'logout'}">
-					<div style="color: red">
-						로그아웃 되었습니다.
-					</div>
-					<button type="button" id="logout" align="center">로그아웃</button>
+				<div style="color: red">
+<%--				<div style="border: 1px dashed darkcyan; width: 300px; height: 200px; float: right;">--%>
+					로그아웃 되었습니다.
+<%--				</div>--%>
+				<button type="button" id="logout" align="center">로그아웃</button>
 				</c:if>
-			</div>
-		</div>
+		</form>
+<%--		</div>--%>
 	</nav>
 	<nav>
 		<div>

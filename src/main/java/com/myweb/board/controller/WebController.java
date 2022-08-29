@@ -1,12 +1,12 @@
+/*
 package com.myweb.board.controller;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpSession;
-
+import com.myweb.board.vo.MemberVO;
+import com.myweb.board.vo.MyModifyVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,23 +15,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.myweb.board.service.WebService;
-import com.myweb.board.vo.LogInVO;
-import com.myweb.board.vo.MemberVO;
-import com.myweb.board.vo.MyModifyVO;
+import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 @Controller
 public class WebController {
 
-	@Autowired
-	WebService webservice;
+	*/
+/*@Autowired
+	WebService webservice;*//*
+
 
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
 
-	/*
+	*/
+/*
 	 * Welcome 페이지
-	 * */
+	 * *//*
+
+*/
 /*
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String getWelcome() throws Exception {
@@ -44,43 +47,17 @@ public class WebController {
 
 		return "/welcome";
 	}
-*/
-
-	/*
-		메인페이지 및 home화면
-		 * */
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String getMain() throws Exception {
-
-		logger.info("main GET Controller >>>>>>>>>");
-		return "main";
-	}
-	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public ModelAndView postMain(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
-
-		logger.info("main POST Controller >>>>>>>>>");
-
-//		String login = WebService.login(vo);
-
-		ModelAndView mav = new ModelAndView();
-		if (mav == null) {
-			//	session.setAttribute("msg", null);
-			mav.setViewName("redirect:/main");
-		} else {
-			//			session.setAttribute("login", login);
-			mav.setViewName("redirect:/page_isErrorPage_error");
-
-		}
-		return mav;
-
-	}
+*//*
 
 
-	/*
+	*/
+/*
 	 * 로그인
 	 *  1. 다른 패스워드 입력해도 로그인하는 오류 해결 필요
-	 * */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	 * *//*
+
+	*/
+/*@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String GetwebLogin(HttpSession session, RedirectAttributes rttr) throws Exception {
 
 		logger.info("Login GET Controller >>>>>>>>>");
@@ -106,11 +83,14 @@ public class WebController {
 		return mav;
 
 	}
+*//*
 
 
-	/*
+	*/
+/*
 	회원가입
-	 * */
+	 * *//*
+
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public ModelAndView GetwebJoin(Model model, Map<Object, String> map) throws Exception {
 
@@ -128,7 +108,7 @@ public class WebController {
 		int rs = webservice.insertJoin(vo);
 
 		ModelAndView mav = new ModelAndView();
-		if(rs == 1) {
+		if (rs == 1) {
 			mav.setViewName("login");
 		} else {
 			mav.setViewName("redirect:/join");
@@ -138,16 +118,16 @@ public class WebController {
 	}
 
 
-
-
-	/*
+	*/
+/*
 	마이페이지 수정
-	 * */
+	 * *//*
+
 	@RequestMapping(value = "/myModify", method = RequestMethod.GET)
 	public ModelAndView GetwebmyModify(Model model, Map<Object, String> map, HttpSession session, MyModifyVO vo) throws Exception {
 
 		// 객체 안에 있는 id정보 저장
-		String id = (String)session.getAttribute("userId");
+		String id = (String) session.getAttribute("userId");
 
 		// 서비스 안의 회원정보 보기 메서드 호출
 		//		MemberVO vo1 = webservice.selectLogin(vo);
@@ -162,7 +142,8 @@ public class WebController {
 	public void PostwebmyModify(@RequestParam Map<Object, String> map, Model model) throws Exception {
 
 		webservice.updateMyModify(map);
-		/*int rs = webservice.updateMyModify(map);
+		*/
+/*int rs = webservice.updateMyModify(map);
 
 		ModelAndView mav = new ModelAndView();
 		if(rs == 1) {
@@ -170,13 +151,17 @@ public class WebController {
 		} else {
 			mav.setViewName("redirect:/myModify");
 		}
-		return mav;*/
+		return mav;*//*
+
 	}
 
-	/*
+	*/
+/*
 	공지사항
-	 * */
-	/*@RequestMapping(value = "/main", method = RequestMethod.GET)
+	 * *//*
+
+	*/
+/*@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String GetMain(Model model, Map<Object, String> map) throws Exception {
 
 		logger.info("main GET Controller >>>>>>>>>");
@@ -189,11 +174,14 @@ public class WebController {
 		logger.info("main POST Controller >>>>>>>>>");
 		return "/main";
 	}
-*/
+*//*
 
-	/*
+
+	*/
+/*
 	자유 게시판
- 	* */
+ 	* *//*
+
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String GetList(Model model, Map<Object, String> map) throws Exception {
 
@@ -209,3 +197,4 @@ public class WebController {
 	}
 
 }
+*/
