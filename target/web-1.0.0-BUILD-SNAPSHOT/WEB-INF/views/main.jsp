@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8" %>
 <html>
 <head>
 	<title>메인페이지</title>
@@ -29,77 +29,64 @@
 	</script>
 </head>
 <body>
-	<nav>
-		<form action="main.jsp" method="POST">
-			<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"> </label>
-			<label> 패스워드: <input type="password" id="pw"> </label>
-			
-			<button type="button" id="btnLogin" align="center">로그인</button>
-			<c:if test="${msg == 'failure'}">
-				<div style="color: red">
-					아이디 또는 비밀번호가 일치하지 않습니다.
-				</div>
-			</c:if>
-			<button type="button" id="btnJoin" align="center">회원가입</button>
-			<div>
-				<c:if test="${msg == 'logout'}">
-				<div style="color: red">
-<%--				<div style="border: 1px dashed darkcyan; width: 300px; height: 200px; float: right;">--%>
-					로그아웃 되었습니다.
-<%--				</div>--%>
-				<button type="button" id="logout" align="center">로그아웃</button>
-				</c:if>
-		</form>
-<%--		</div>--%>
-	</nav>
-	<nav>
-		<div>
-			<ul>
-				<ou>test1
-					<li>litest</li>
-				</ou>
-				<li>testtttt</li>
-			</ul>
-		</div>
-	</nav>
+<nav style="right: auto">
+	<form method="POST">
+		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"> </label><br>
+		<label> 패스워드: <input type="password" id="pw"> </label>
+		
+		<button type="submit" id="btnLogin" align="center">로그인</button>
+		<button type="submit" id="btnJoin" align="center">회원가입</button>
+		<button type="submit" id="logout" align="center">로그아웃</button>
+	</form>
+</nav>
+<nav>
 	<div>
-		<table board="1">
-			<colgroup>
-				<col style="width: 5%;" />
-				<col style="width: auto;" />
-				<col style="width: 15%;" />
-				<col style="width: 10%;" />
-				<col style="width: 10%;" />
-			</colgroup>
-			<thead>
-				<tr>
-					<th>NO</th>
-					<th>글제목</th>
-					<th>작성자</th>
-					<th>조회수</th>
-					<th>작성일</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%-- <c:choose>
-					<c:when test="${empty boardList }" >
-						<tr><td colspan="5" align="center">데이터가 없습니다.</td></tr>
-					</c:when>
-					<c:when test="${!empty boardList}">
-						<c:forEach var="list" items="${boardList}">
-							<tr>
-								<td><c:out value="${list.bid}"/></td>
-								<td><c:out value="${list.title}"/></td>
-								<td><c:out value="${list.reg_id}"/></td>
-								<td><c:out value="${list.view_cnt}"/></td>
-								<td><c:out value="${list.reg_dt}"/></td>
-							</tr>
-						</c:forEach>
-					</c:when>
-				</c:choose> --%>
-			</tbody>
-		</table>
+		<ul>
+			<ou>test1
+				<li>litest</li>
+			</ou>
+			<li>testtttt</li>
+		</ul>
 	</div>
+</nav>
+<div>
+	<table board="1">
+		<colgroup>
+			<col style="width: 5%;"/>
+			<col style="width: auto;"/>
+			<col style="width: 15%;"/>
+			<col style="width: 10%;"/>
+			<col style="width: 10%;"/>
+		</colgroup>
+		<thead>
+		<tr>
+			<th>NO</th>
+			<th>글제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+			<th>작성일</th>
+		</tr>
+		</thead>
+		<tbody>
+		<%-- <c:choose>
+			<c:when test="${empty boardList }" >
+				<tr><td colspan="5" align="center">데이터가 없습니다.</td></tr>
+			</c:when>
+			<c:when test="${!empty boardList}">
+				<c:forEach var="list" items="${boardList}">
+					<tr>
+						<td><c:out value="${list.bid}"/></td>
+						<td><c:out value="${list.title}"/></td>
+						<td><c:out value="${list.reg_id}"/></td>
+						<td><c:out value="${list.view_cnt}"/></td>
+						<td><c:out value="${list.reg_dt}"/></td>
+					</tr>
+				</c:forEach>
+			</c:when>
+		</c:choose> --%>
+		</tbody>
+	</table>
+</div>
 
 </body>
 </html>

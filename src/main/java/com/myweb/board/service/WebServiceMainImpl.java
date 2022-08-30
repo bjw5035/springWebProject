@@ -15,15 +15,18 @@ public class WebServiceMainImpl implements WebServiceMain {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebServiceMainImpl.class);
 
-	/*
-	 * 로그인
-	 * */
+
 	@Override
 	public String login(LogInVO vo) throws Exception {
 
 		logger.info("Login ServiceImpl >>>>>>>>>");
+		if (!vo.equals(dao.login(vo))) {
+			return "/main.jsp";
+		} else {
+			dao.login(vo);
+		}
 
-		return dao.login(vo);
+		return null;
 	}
 
 }

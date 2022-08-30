@@ -1,5 +1,6 @@
 package com.myweb.board.controller;
 
+import com.myweb.board.dao.WebMainDao;
 import com.myweb.board.service.WebServiceMain;
 import com.myweb.board.vo.LogInVO;
 import org.slf4j.Logger;
@@ -20,31 +21,38 @@ public class WebMainController {
 	@Autowired
 	WebServiceMain webServiceMain;
 
+	// 로깅을 위한 변수
 	private static final Logger logger = LoggerFactory.getLogger(WebMainController.class);
-
-
-	/*
-		메인페이지 및 home화면
-		 * */
+	
+	
+	// 로그인 화면(GET)
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String getMain() throws Exception {
 
 		logger.info("main GET Controller >>>>>>>>>");
-		return "main";
+		
+		return "/main";
 	}
 
+	// 로그인 화면(POST)
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
 	public ModelAndView postMain(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
 
 		logger.info("main POST Controller >>>>>>>>>");
 
+		String login = webServiceMain.login(vo);
+
 		ModelAndView mav = new ModelAndView();
-		if (mav == null) {
-			session.setAttribute("msg", null);
+
+		// login이 빈값이 아니면
+		if (vo.equals(login)) {
+			// session에 login을 담는다.
+			session.setAttribute("login", vo);
+
+			// main 화면을 보여준다.
 			mav.setViewName("redirect:/main");
 		} else {
-			session.setAttribute("vo", vo);
-			mav.setViewName("redirect:/page_isErrorPage_error");
+//			session.setAttribute("msg", null);
 
 		}
 		return mav;
