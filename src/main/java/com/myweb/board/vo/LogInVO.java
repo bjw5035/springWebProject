@@ -16,34 +16,34 @@ public class LogInVO {
 
     }
 
-    public String getUserId() {
+    public String getId() {
         return id;
     }
 
-    public void setUserId(String userId) {
-        this.id = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getUserPw() {
+    public String getPw() {
         return pw;
     }
 
-    public void setUserPw(String userPw) {
-        this.pw = userPw;
+    public void setPw(String pw) {
+        this.pw = pw;
     }
 
     @Override
     public String toString() {
         return "LogInVO{" +
-                "userId='" + id + '\'' +
-                ", userPw='" + pw + '\'' +
+                "Id='" + id + '\'' +
+                ", Pw='" + pw + '\'' +
                 '}';
     }
 
-    public LogInVO(String userId, String userPw) {
+    public LogInVO(String id, String pw) {
         super();
-        this.id = userId;
-        this.pw = userPw;
+        this.id = id;
+        this.pw = pw;
     }
 
 }

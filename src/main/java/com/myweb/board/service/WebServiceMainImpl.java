@@ -17,16 +17,17 @@ public class WebServiceMainImpl implements WebServiceMain {
 
 
 	@Override
-	public String login(LogInVO vo) throws Exception {
+	public LogInVO login(LogInVO vo) throws Exception {
 
-		logger.info("Login ServiceImpl >>>>>>>>>");
-		if (!vo.equals(dao.login(vo))) {
+		logger.info("Login ServiceImpl >>>>>>>>>", vo);
+		/*if (!vo.equals(dao.login(vo))) {
 			return "/main.jsp";
 		} else {
 			dao.login(vo);
-		}
+		}*/
 
-		return null;
+//		return null;
+		return dao.login(vo);
 	}
 
 }

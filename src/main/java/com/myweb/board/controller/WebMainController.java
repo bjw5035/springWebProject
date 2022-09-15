@@ -36,25 +36,30 @@ public class WebMainController {
 
 	// 로그인 화면(POST)
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public ModelAndView postMain(Model model, ModelAndView modelAndView, HttpSession session, LogInVO vo, RedirectAttributes rttr) throws Exception {
+	public ModelAndView postMain(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
 
 		logger.info("main POST Controller >>>>>>>>>");
-
-		String login = webServiceMain.login(vo);
+//		String login = String.valueOf(webServiceMain.login(vo));
 
 		ModelAndView mav = new ModelAndView();
 
-		// login이 빈값이 아니면
-		if (vo.equals(login)) {
-			// session에 login을 담는다.
-			session.setAttribute("login", vo);
+		LogInVO login = webServiceMain.login(vo);
 
-			// main 화면을 보여준다.
-			mav.setViewName("redirect:/main");
-		} else {
-//			session.setAttribute("msg", null);
-
+		if (login.equals(true)) {
+//			mav.setView(login);
 		}
+		// login이 같으면
+//		if (vo.equals(vo)) {
+//			// session에 login을 담는다.
+//			session.setAttribute("login", vo);
+//
+//			// main 화면을 보여준다.
+//			mav.setViewName("redirect:/main");
+//		} else {
+////			session.setAttribute("msg", null);
+//			mav.setViewName("redirect:/main");
+//
+//		}
 		return mav;
 
 	}

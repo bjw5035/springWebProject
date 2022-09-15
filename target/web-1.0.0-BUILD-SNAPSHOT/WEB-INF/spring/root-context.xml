@@ -9,10 +9,10 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
     <!-- for mysql conection Pool-->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${spring.datasource.driverClassname}"/>
-        <property name="url" value="${spring.datasource.url}"/>
-        <property name="username" value="${spring.datasource.username}"/>
-        <property name="password" value="${spring.datasource.password}"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/webdb?serverTimezone=UTC"/>
+        <property name="username" value="user1"/>
+        <property name="password" value="rootpass1!!"/>
     </bean>
 
     <!-- for mybatis -->

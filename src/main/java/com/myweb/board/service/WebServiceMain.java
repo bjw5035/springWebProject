@@ -5,5 +5,5 @@ import com.myweb.board.vo.LogInVO;
 public interface WebServiceMain {
 
 
-	public String login(LogInVO vo) throws Exception;
+	public LogInVO login(LogInVO vo) throws Exception;
 }
