@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myweb.board.service.WebServiceMain;
@@ -42,41 +43,15 @@ public class WebMainController {
 			ModelAndView mav = new ModelAndView();
 	
 			LogInVO login = webServiceMain.login(vo);
-	
-	
-			// login이 같으면
-			if (vo.equals(login)) {
-				// session에 login을 담는다.
-				session.setAttribute("login", login);
-	
-				// main 화면을 보여준다.
-				mav.setViewName("redirect:/main");
-				
-			} else {
-	//			session.setAttribute("msg", null);
+
+			if (login == null) {
 				mav.setViewName("redirect:/test");
-	
+			} else {
+				mav.setViewName("redirect:/main");
 			}
 			return mav;
 	
 		}
-	
-	/*	@Autowired
-		SqlSessionTemplate sqlSessionTemplate;
-		
-		@RequestMapping(value = "/", method = RequestMethod.POST)
-		public ModelAndView postMain(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
-	
-			ModelAndView mav = new ModelAndView();
-			
-			
-			
-			List<E> loginlist = sqlSessionTemplate.selectList("web.login ");;
-	
-	
-			return mav;
-	
-		}*/
 
 	/*	
 			// 회원가입 화면(GET)

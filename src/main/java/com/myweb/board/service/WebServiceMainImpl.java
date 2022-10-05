@@ -20,13 +20,7 @@ public class WebServiceMainImpl implements WebServiceMain {
 	public LogInVO login(LogInVO vo) throws Exception {
 
 		logger.info("Login ServiceImpl >>>>>>>>>", vo);
-		/*if (!vo.equals(dao.login(vo))) {
-			return "/main.jsp";
-		} else {
-			dao.login(vo);
-		}*/
 
-//		return null;
 		return dao.login(vo);
 	}
 
