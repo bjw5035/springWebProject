@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class LogInVO {
 
     private String id;
-    private String pw;
+    private int pw;
 
     public LogInVO() {
 
@@ -24,11 +24,11 @@ public class LogInVO {
         this.id = id;
     }
 
-    public String getPw() {
+    public int getPw() {
         return pw;
     }
 
-    public void setPw(String pw) {
+    public void setPw(int pw) {
         this.pw = pw;
     }
 
@@ -40,7 +40,7 @@ public class LogInVO {
                 '}';
     }
 
-    public LogInVO(String id, String pw) {
+    public LogInVO(String id, int pw) {
         super();
         this.id = id;
         this.pw = pw;

@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class WebServiceMainImpl implements WebServiceMain {
+public class WebMainServiceImpl implements WebMainService {
 
 	@Autowired
 	WebMainDao dao;
 
-	private static final Logger logger = LoggerFactory.getLogger(WebServiceMainImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(WebMainServiceImpl.class);
 
 
 	@Override

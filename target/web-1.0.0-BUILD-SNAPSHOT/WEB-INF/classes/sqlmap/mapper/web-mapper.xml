@@ -14,7 +14,7 @@
 	</insert>
 
 	<!-- 로그인 -->
-	<select id="login" parameterType="LoginVO" resultType="String">
+	<select id="login" parameterType="String" resultType="LogInVO">
 		<![CDATA[
 			SELECT *
 			FROM login
