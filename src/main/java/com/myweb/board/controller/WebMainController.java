@@ -45,8 +45,9 @@ public class WebMainController {
 //				System.out.println(vo);
 				mav = new ModelAndView();
 
-				LogInVO login = webMainService.login(vo);
+				String login = webMainService.login(vo);
 				if (login == null) {
+					rttr.addFlashAttribute(login, "login");
 					mav.setViewName("redirect:/");
 				}
 				mav.setViewName("redirect:/test");

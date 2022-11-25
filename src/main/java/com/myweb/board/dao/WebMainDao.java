@@ -17,7 +17,7 @@ public class WebMainDao {
 
 
 	/* 로그인 */
-	public LogInVO login(LogInVO vo) throws Exception {
+	public String login(LogInVO vo) throws Exception {
 
 		logger.info("Dao login >>>>>>>>>>>>>>>>>>>>>>");
 
