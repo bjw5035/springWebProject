@@ -17,7 +17,7 @@ public class WebMainServiceImpl implements WebMainService {
 
 
 	@Override
-	public String login(LogInVO vo) throws Exception {
+	public LogInVO login(LogInVO vo) throws Exception {
 
 		logger.info("Login ServiceImpl >>>>>>>>>", vo);
 

@@ -35,20 +35,20 @@ public class WebMainController {
 
 	// 로그인 화면(POST)
 		@RequestMapping(value = "/test", method = RequestMethod.POST)
-		public ModelAndView postMain(Model model, ModelAndView modelAndView, LogInVO vo , HttpSession session, RedirectAttributes rttr) throws Exception {
+		public ModelAndView postMain(ModelAndView modelAndView, LogInVO vo , HttpSession session, RedirectAttributes rttr) throws Exception {
 
 
 			logger.info("main POST Controller >>>>>>>>>");
 
-			ModelAndView mav = null;
+			LogInVO login = webMainService.login(vo);
+			System.out.println(login);
 
-//				System.out.println(vo);
-				mav = new ModelAndView();
+			ModelAndView mav = new ModelAndView();
+			logger.info("login", vo);
 
-				String login = webMainService.login(vo);
 				if (login == null) {
-					rttr.addFlashAttribute(login, "login");
 					mav.setViewName("redirect:/");
+					session.setAttribute("LOGIN", login);
 				}
 				mav.setViewName("redirect:/test");
 			return mav;

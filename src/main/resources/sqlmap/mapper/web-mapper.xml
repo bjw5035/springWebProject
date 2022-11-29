@@ -14,12 +14,10 @@
 	</insert>
 
 	<!-- 로그인 -->
-	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">
+<!--	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">-->
+	<select id="login" resultType="com.myweb.board.vo.LogInVO">
 		<![CDATA[
-			SELECT *
-			FROM login
-			WHERE id = #{id}
-			AND pw = #{pw}
+			SELECT * FROM login WHERE id = #{id} AND pw = #{pw}
 		]]>
 	</select>
 
