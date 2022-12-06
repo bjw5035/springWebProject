@@ -65,7 +65,7 @@ public class WebMainController {
 				return "/join";
 			}
 
-			// 로그인 화면(POST)
+			// 회원가입 화면(POST)
 			@RequestMapping(value = "/join", method = RequestMethod.POST)
 			public ModelAndView postJoin(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
 
