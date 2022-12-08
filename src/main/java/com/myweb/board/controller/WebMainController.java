@@ -46,15 +46,19 @@ public class WebMainController {
 			ModelAndView mav = new ModelAndView();
 			logger.info("login", vo);
 
-				if (login == null) {
-					model.addAttribute("login", vo);
-					logger.info("login",vo);
-					session.setAttribute("LOGIN", login);
-					mav.setViewName("redirect:/main");
-				}
+			if (login != vo) {
+				model.addAttribute("login", vo);
+			} else {
+				mav.setViewName("redirect:/main");
+			}
+//				if (login == null) {
+//					model.addAttribute("login", vo);
+//					logger.info("login",vo);
+//					session.setAttribute("LOGIN", login);
+//					mav.setViewName("redirect:/main");
+//				}
 			return mav;
 //			mav.setViewName("redirect:/test");
-//			return mav;
 
 		}
 
