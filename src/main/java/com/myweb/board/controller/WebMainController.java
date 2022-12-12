@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -35,30 +36,24 @@ public class WebMainController {
 
 	// 로그인 화면(POST)
 		@RequestMapping(value = "/test", method = RequestMethod.POST)
-		public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo , HttpSession session, RedirectAttributes rttr) throws Exception {
+		public @ResponseBody ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo , HttpSession session, RedirectAttributes rttr) throws Exception {
 
 
 			logger.info("main POST Controller >>>>>>>>>");
 
 			LogInVO login = webMainService.login(vo);
-			System.out.println(login);
+//			System.out.println(login);
 
 			ModelAndView mav = new ModelAndView();
 			logger.info("login", vo);
 
-			if (login != vo) {
+			if (login != null) {
 				model.addAttribute("login", vo);
+				mav.setViewName("join");
 			} else {
 				mav.setViewName("redirect:/main");
 			}
-//				if (login == null) {
-//					model.addAttribute("login", vo);
-//					logger.info("login",vo);
-//					session.setAttribute("LOGIN", login);
-//					mav.setViewName("redirect:/main");
-//				}
 			return mav;
-//			mav.setViewName("redirect:/test");
 
 		}
 
