@@ -42,7 +42,7 @@ public class WebMainController {
 			logger.info("main POST Controller >>>>>>>>>");
 
 			LogInVO login = webMainService.login(vo);
-//			System.out.println(login);
+			System.out.println(login);
 
 			ModelAndView mav = new ModelAndView();
 			logger.info("login", vo);
@@ -56,7 +56,7 @@ public class WebMainController {
 			return mav;
 
 		}
-
+		/*
 			// 회원가입 화면(GET)
 			@RequestMapping(value = "/join", method = RequestMethod.GET)
 			public String getJoin() throws Exception {
@@ -65,17 +65,17 @@ public class WebMainController {
 
 				return "/join";
 			}
-
-			// 회원가입 화면(POST)
-			@RequestMapping(value = "/join", method = RequestMethod.POST)
-			public ModelAndView postJoin(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
-
-				logger.info("Join POST Controller >>>>>>>>>");
-
-				ModelAndView mav = new ModelAndView();
-
-
-				return mav;
-			}
-
+			
+						// 회원가입 화면(POST)
+						@RequestMapping(value = "/join", method = RequestMethod.POST)
+						public ModelAndView postJoin(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
+			
+							logger.info("Join POST Controller >>>>>>>>>");
+			
+							ModelAndView mav = new ModelAndView();
+			
+			
+							return mav;
+						}
+			*/
 }
