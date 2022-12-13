@@ -45,11 +45,11 @@ public class WebMainController {
 			System.out.println(login);
 
 			ModelAndView mav = new ModelAndView();
-			logger.info("login", vo);
+			logger.info("login", login);
 
-			if (login == null) {
-				model.addAttribute("login", vo);
-				System.out.println(vo);
+			if (login != null) {
+				model.addAttribute("login", login);
+//				System.out.println(login);
 				mav.setViewName("redirect:/test");
 			} else {
 				mav.setViewName("redirect:/main");
