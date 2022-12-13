@@ -47,9 +47,10 @@ public class WebMainController {
 			ModelAndView mav = new ModelAndView();
 			logger.info("login", vo);
 
-			if (login != null) {
+			if (login == null) {
 				model.addAttribute("login", vo);
-				mav.setViewName("join");
+				System.out.println(vo);
+				mav.setViewName("redirect:/test");
 			} else {
 				mav.setViewName("redirect:/main");
 			}
