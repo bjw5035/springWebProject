@@ -2,6 +2,8 @@ package com.myweb.board.service;
 
 import com.myweb.board.dao.WebMainDao;
 import com.myweb.board.vo.LogInVO;
+import com.myweb.board.vo.MemberVO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,12 @@ public class WebMainServiceImpl implements WebMainService {
 		logger.info("Login ServiceImpl >>>>>>>>>", vo);
 
 		return dao.login(vo);
+	}
+	
+	@Override
+	public MemberVO join(MemberVO vo1) throws Exception {
+		
+		return dao.join(vo1);
 	}
 
 }

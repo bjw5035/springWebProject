@@ -7,7 +7,7 @@
 <mapper namespace="web">
 
 	<!-- 회원가입 -->
-	<insert id="insert_joinmember" parameterType="com.myweb.board.vo.MemberVO">
+	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">
 		<![CDATA[
 			INSERT INTO joinmember VALUES(#{userId}, #{userPw}, #{userName}, #{userAge})
 		]]>

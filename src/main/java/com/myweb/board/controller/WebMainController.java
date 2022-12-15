@@ -9,12 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myweb.board.service.WebMainService;
 import com.myweb.board.vo.LogInVO;
+import com.myweb.board.vo.MemberVO;
 
 @Controller
 public class WebMainController {
@@ -35,48 +35,48 @@ public class WebMainController {
 	}
 
 	// 로그인 화면(POST)
-		@RequestMapping(value = "/test", method = RequestMethod.POST)
-		public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo , HttpSession session, RedirectAttributes rttr) throws Exception {
+	@RequestMapping(value = "/test", method = RequestMethod.POST)
+	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,
+			RedirectAttributes rttr) throws Exception {
 
+		logger.info("main POST Controller >>>>>>>>>");
 
-			logger.info("main POST Controller >>>>>>>>>");
+		LogInVO login = webMainService.login(vo);
+		System.out.println(login);
 
-			LogInVO login = webMainService.login(vo);
-			System.out.println(login);
+		ModelAndView mav = new ModelAndView();
+		logger.info("login", login);
 
-			ModelAndView mav = new ModelAndView();
-			logger.info("login", login);
-
-			if (login != null) {
-				model.addAttribute("login", login);
-//				System.out.println(login);
-				mav.setViewName("redirect:/main");
-			} else {
-				mav.setViewName("redirect:/test");
-			}
-			return mav;
-
+		if (login != null) {
+			model.addAttribute("login", login);
+			//				System.out.println(login);
+			mav.setViewName("redirect:/main");
+		} else {
+			mav.setViewName("redirect:/test");
 		}
-		/*
-			// 회원가입 화면(GET)
-			@RequestMapping(value = "/join", method = RequestMethod.GET)
-			public String getJoin() throws Exception {
+		return mav;
 
-				logger.info("Join GET Controller >>>>>>>>>");
+	}
 
-				return "/join";
-			}
-			
-						// 회원가입 화면(POST)
-						@RequestMapping(value = "/join", method = RequestMethod.POST)
-						public ModelAndView postJoin(Model model, ModelAndView modelAndView, LogInVO vo ,HttpSession session, RedirectAttributes rttr) throws Exception {
-			
-							logger.info("Join POST Controller >>>>>>>>>");
-			
-							ModelAndView mav = new ModelAndView();
-			
-			
-							return mav;
-						}
-			*/
+	// 회원가입 화면(GET)
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String getJoin() throws Exception {
+
+		logger.info("Join GET Controller >>>>>>>>>");
+
+		return "/join";
+	}
+
+	// 회원가입 화면(POST)
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public ModelAndView postJoin(Model model, ModelAndView modelAndView, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		logger.info("Join POST Controller >>>>>>>>>");
+
+		ModelAndView mav = new ModelAndView();
+
+
+		return mav;
+	}
+
 }
