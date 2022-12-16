@@ -3,6 +3,8 @@ package com.myweb.board.dao;
 import com.myweb.board.vo.LogInVO;
 import com.myweb.board.vo.MemberVO;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,7 @@ public class WebMainDao {
 	}
 	
 	/* 회원가입 */
+//	public List<String, Object> join(List<String, Object> Map) throws Exception {
 	public MemberVO join(MemberVO vo1) throws Exception {
 		return vo1;
 		
