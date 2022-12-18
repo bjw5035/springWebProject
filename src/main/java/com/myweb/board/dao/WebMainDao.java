@@ -33,6 +33,7 @@ public class WebMainDao {
 	public MemberVO join(MemberVO vo1) throws Exception {
 		return vo1;
 		
+		// 형변환 필요
 //		return sqlSessionTemplate.insert("web.join", vo1);
 		
 	}
