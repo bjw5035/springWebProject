@@ -73,8 +73,16 @@ public class WebMainController {
 
 		logger.info("Join POST Controller >>>>>>>>>");
 
-		ModelAndView mav = new ModelAndView();
+		int join1 = webMainService.join(vo1);
 
+		ModelAndView mav = new ModelAndView();
+		
+//		
+//		if(join1==1 ) {
+//			mav.setViewName("redirect:/test");
+//		} else {
+//			mav.setViewName("redirect:/join");
+//		}
 
 		return mav;
 	}

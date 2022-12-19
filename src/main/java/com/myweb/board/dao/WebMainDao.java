@@ -30,11 +30,11 @@ public class WebMainDao {
 	
 	/* 회원가입 */
 //	public List<String, Object> join(List<String, Object> Map) throws Exception {
-	public MemberVO join(MemberVO vo1) throws Exception {
-		return vo1;
+	public int join(MemberVO vo1) throws Exception {
+//		return vo1;
 		
 		// 형변환 필요
-//		return sqlSessionTemplate.insert("web.join", vo1);
+		return sqlSessionTemplate.insert("web.join", vo1);
 		
 	}
 }

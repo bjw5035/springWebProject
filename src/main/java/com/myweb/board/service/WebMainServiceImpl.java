@@ -27,7 +27,7 @@ public class WebMainServiceImpl implements WebMainService {
 	}
 	
 	@Override
-	public MemberVO join(MemberVO vo1) throws Exception {
+	public int join(MemberVO vo1) throws Exception {
 		
 		return dao.join(vo1);
 	}
