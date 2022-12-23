@@ -36,8 +36,7 @@ public class WebMainController {
 
 	// 로그인 화면(POST)
 	@RequestMapping(value = "/test", method = RequestMethod.POST)
-	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,
-			RedirectAttributes rttr) throws Exception {
+	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,RedirectAttributes rttr) throws Exception {
 
 		logger.info("main POST Controller >>>>>>>>>");
 
@@ -49,7 +48,6 @@ public class WebMainController {
 
 		if (login != null) {
 			model.addAttribute("login", login);
-			//				System.out.println(login);
 			mav.setViewName("redirect:/main");
 		} else {
 			mav.setViewName("redirect:/test");
@@ -77,12 +75,12 @@ public class WebMainController {
 
 		ModelAndView mav = new ModelAndView();
 		
-//		
-//		if(join1==1 ) {
-//			mav.setViewName("redirect:/test");
-//		} else {
-//			mav.setViewName("redirect:/join");
-//		}
+		
+		if(join1 == 1 ) {
+			mav.setViewName("redirect:/test");
+		} else {
+			mav.setViewName("redirect:/join");
+		}
 
 		return mav;
 	}
