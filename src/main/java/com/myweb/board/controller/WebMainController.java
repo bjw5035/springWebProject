@@ -1,5 +1,7 @@
 package com.myweb.board.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -26,26 +28,26 @@ public class WebMainController {
 	private static final Logger logger = LoggerFactory.getLogger(WebMainController.class);
 
 	// 로그인 화면(GET)
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String getMain(Model model, ModelAndView modelAndView) throws Exception {
 
 		logger.info("main GET Controller >>>>>>>>>");
 
-		return "/test";
+		return "/main";
 	}
 
 	// 로그인 화면(POST)
-	@RequestMapping(value = "/test", method = RequestMethod.POST)
+	@RequestMapping(value = "/main", method = RequestMethod.POST)
 	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,RedirectAttributes rttr) throws Exception {
-
+	
 		logger.info("main POST Controller >>>>>>>>>");
-
+	
 		LogInVO login = webMainService.login(vo);
 		System.out.println(login);
-
+	
 		ModelAndView mav = new ModelAndView();
 		logger.info("login", login);
-
+	
 		if (login != null) {
 			model.addAttribute("login", login);
 			mav.setViewName("redirect:/main");
@@ -53,9 +55,28 @@ public class WebMainController {
 			mav.setViewName("redirect:/test");
 		}
 		return mav;
-
+	
 	}
-
+	/*public List<String> postMain(Model model, LogInVO vo, RedirectAttributes rttr) {
+		
+		try {
+			List<String> login = (List<String>)webMainService.login(vo);
+			System.out.println(login);
+			
+			if(login != null) {
+				System.out.println(">>>>>>>>>>>>Not Null");
+			} else {
+				System.out.println(">>>>>>>>>>>>Null");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return (List<String>) vo;
+	}
+	*/
 	// 회원가입 화면(GET)
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String getJoin() throws Exception {

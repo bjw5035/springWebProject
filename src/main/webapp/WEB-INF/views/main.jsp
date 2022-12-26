@@ -30,12 +30,12 @@
 </head>
 <body>
 <%--<nav style="right: auto">--%>
-	<form method="POST">
+	<form action="" method="POST">
 		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"> </label><br>
 		<label> 패스워드: <input type="password" id="pw" > </label>
 		
 <%--		<button type="submit" id="btnLogin" align="center">로그인</button>--%>
-		<button type="submit" align="center">로그인</button>
+		<button align="center" type="button">로그인</button>
 <%--		<button type="submit" id="btnJoin" align="center">회원가입</button>--%>
 <%--		<button type="submit" id="logout" align="center">로그아웃</button>--%>
 	</form>
@@ -50,6 +50,7 @@
 		</ul>
 	</div>
 </nav>
+<%-- 
 <div>
 	<table board="1">
 		<colgroup>
@@ -69,7 +70,7 @@
 		</tr>
 		</thead>
 		<tbody>
-		<%-- <c:choose>
+		<c:choose>
 			<c:when test="${empty boardList }" >
 				<tr><td colspan="5" align="center">데이터가 없습니다.</td></tr>
 			</c:when>
@@ -84,10 +85,10 @@
 					</tr>
 				</c:forEach>
 			</c:when>
-		</c:choose> --%>
+		</c:choose>
 		</tbody>
 	</table>
 </div>
-
+ --%>
 </body>
 </html>

@@ -18,18 +18,24 @@ public class WebMainDao {
 	private static final Logger logger = LoggerFactory.getLogger(WebMainDao.class);
 
 
-	/* 로그인 */
+	/* 
+	 * 로그인 
+	 * */
 	public LogInVO login(LogInVO vo) throws Exception {
 
 		logger.info("Dao login >>>>>>>>>>>>>>>>>>>>>>");
 
+//		return sqlSessionTemplate.selectList("web.login", vo);
 		return sqlSessionTemplate.selectOne("web.login", vo);
 	}
 	
-	/* 회원가입 */
-	public int join(MemberVO vo1) throws Exception {
+	/* 
+	 * 회원가입 
+	 * 
+	 * */
+	public int join(MemberVO vo1) throws Exception {	// int로 형변환 필요
 		
-		// 형변환 필요
+		
 		return sqlSessionTemplate.insert("web.join", vo1);
 		
 	}
