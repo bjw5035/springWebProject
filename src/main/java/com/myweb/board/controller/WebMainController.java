@@ -1,7 +1,5 @@
 package com.myweb.board.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;

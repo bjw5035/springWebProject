@@ -6,7 +6,7 @@ import com.myweb.board.vo.MemberVO;
 public interface WebMainService {
 
 
-	LogInVO login(LogInVO vo) throws Exception;
+	public LogInVO login(LogInVO vo) throws Exception;
 //	public List<String> login(LogInVO vo) throws Exception;
 //public Map<String, Object> login(Map<String, Object> map) throws Exception;
 	public int join(MemberVO vo1) throws Exception;
