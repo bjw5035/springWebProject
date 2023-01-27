@@ -33,10 +33,10 @@ public class WebMainDao {
 	 * 회원가입 
 	 * 
 	 * */
-	public int join(MemberVO vo1) throws Exception {	// int로 형변환 필요
+	public void join(MemberVO vo1) throws Exception {
 		
 		
-		return sqlSessionTemplate.insert("web.join", vo1);
+		return;
 		
 	}
 }

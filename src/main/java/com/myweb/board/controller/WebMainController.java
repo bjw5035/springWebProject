@@ -86,22 +86,12 @@ public class WebMainController {
 
 	// 회원가입 화면(POST)
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public ModelAndView postJoin(Model model, ModelAndView modelAndView, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
+	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
 
 		logger.info("Join POST Controller >>>>>>>>>");
 
-		int join1 = webMainService.join(vo1);
 
-		ModelAndView mav = new ModelAndView();
-		
-		
-		if(join1 == 1 ) {
-			mav.setViewName("redirect:/test");
-		} else {
-			mav.setViewName("redirect:/join");
-		}
-
-		return mav;
+		return;
 	}
 
 }
