@@ -36,11 +36,11 @@
 		
 <%--		<button type="submit" id="btnLogin" align="center">로그인</button>--%>
 		<button align="center" type="submit">로그인</button>
-<%--		<button type="submit" id="btnJoin" align="center">회원가입</button>--%>
+		<button type="submit" align="center">회원가입</button>
 <%--		<button type="submit" id="logout" align="center">로그아웃</button>--%>
 	</form>
 <%--</nav>--%>
-<nav>
+<!-- <nav>
 	<div>
 		<ul>
 			<ou>test1
@@ -49,7 +49,7 @@
 			<li>testtttt</li>
 		</ul>
 	</div>
-</nav>
+</nav> -->
 <%-- 
 <div>
 	<table board="1">

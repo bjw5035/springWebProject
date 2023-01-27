@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form method="post">
+<form method="post" action="join.jsp">
 	아이디 : <input type="text" name="userId"> <br>
 	비밀번호 : <input type="password" name="userPw"> <br>
 	이름 : <input type="text" name="userName"> <br>

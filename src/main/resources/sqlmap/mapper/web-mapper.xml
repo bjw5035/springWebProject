@@ -17,10 +17,7 @@
 <!--	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">-->
 	<select id="login" parameterType="com.myweb.board.vo.LogInVO">
 		<![CDATA[
-			SELECT *
-			FROM login
-			WHERE id = #{id}
-			  AND pw = #{pw}
+			SELECT * FROM login WHERE id = #{id} AND pw = #{pw}
 		]]>
 	</select>
 
