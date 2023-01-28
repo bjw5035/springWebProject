@@ -22,7 +22,6 @@ public class WebMainServiceImpl implements WebMainService {
 
 	@Override
 	public LogInVO login(LogInVO vo) throws Exception {
-		logger.info("Login ServiceImpl >>>>>>>>>", vo);
 
 		return dao.login(vo);
 	}
@@ -31,6 +30,8 @@ public class WebMainServiceImpl implements WebMainService {
 	@Override
 	public void join(MemberVO vo1) throws Exception {
 		
+		System.out.println("impl ===> " + vo1);
+
 		return;
 	}
 

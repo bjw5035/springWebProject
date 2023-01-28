@@ -77,19 +77,18 @@ public class WebMainController {
 	*/
 	// 회원가입 화면(GET)
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String getJoin() throws Exception {
+	public void getJoin() throws Exception {
 
 		logger.info("Join GET Controller >>>>>>>>>");
 
-		return "/join";
+		return;
 	}
 
 	// 회원가입 화면(POST)
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
 
-		logger.info("Join POST Controller >>>>>>>>>");
-
+		System.out.println("controller ===> {}" + vo1);
 
 		return;
 	}

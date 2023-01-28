@@ -23,7 +23,6 @@ public class WebMainDao {
 	 * */
 	public LogInVO login(LogInVO vo) throws Exception {
 
-		logger.info("Dao login >>>>>>>>>>>>>>>>>>>>>>");
 
 //		return sqlSessionTemplate.selectList("web.login", vo);
 		return sqlSessionTemplate.selectOne("web.login", vo);
@@ -35,6 +34,7 @@ public class WebMainDao {
 	 * */
 	public void join(MemberVO vo1) throws Exception {
 		
+		System.out.println("dao ===> {}" + vo1);
 		
 		return;
 		
