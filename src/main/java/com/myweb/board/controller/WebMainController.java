@@ -88,7 +88,7 @@ public class WebMainController {
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
 
-		System.out.println("controller ===> {}" + vo1);
+		System.out.println("controller ===> " + vo1);
 
 		return;
 	}
