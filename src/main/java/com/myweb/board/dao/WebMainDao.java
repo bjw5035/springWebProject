@@ -24,7 +24,6 @@ public class WebMainDao {
 	public LogInVO login(LogInVO vo) throws Exception {
 
 
-//		return sqlSessionTemplate.selectList("web.login", vo);
 		return sqlSessionTemplate.selectOne("web.login", vo);
 	}
 	
@@ -32,11 +31,11 @@ public class WebMainDao {
 	 * 회원가입 
 	 * 
 	 * */
-	public void join(MemberVO vo1) throws Exception {
+	public String join(MemberVO vo1) throws Exception {
 		
-		System.out.println("dao ===> {}" + vo1);
+		logger.info("dao >>>> " + vo1);
 		
-		return;
+		return sqlSessionTemplate.toString();
 		
 	}
 }

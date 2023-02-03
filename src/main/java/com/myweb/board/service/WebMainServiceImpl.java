@@ -1,15 +1,13 @@
 package com.myweb.board.service;
 
-import com.myweb.board.dao.WebMainDao;
-import com.myweb.board.vo.LogInVO;
-import com.myweb.board.vo.MemberVO;
-
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.myweb.board.dao.WebMainDao;
+import com.myweb.board.vo.LogInVO;
+import com.myweb.board.vo.MemberVO;
 
 @Service
 public class WebMainServiceImpl implements WebMainService {
@@ -28,11 +26,11 @@ public class WebMainServiceImpl implements WebMainService {
 
 	
 	@Override
-	public void join(MemberVO vo1) throws Exception {
+	public String join(MemberVO vo1) throws Exception {
 		
-		System.out.println("impl ===> " + vo1);
+		logger.info("ServiceImpl >>>> " + vo1);
 
-		return;
+		return dao.join(vo1);
 	}
 
 }

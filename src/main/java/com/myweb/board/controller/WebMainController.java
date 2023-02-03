@@ -25,7 +25,9 @@ public class WebMainController {
 	// 로깅을 위한 변수
 	private static final Logger logger = LoggerFactory.getLogger(WebMainController.class);
 
-	// 로그인 화면(GET)
+	/*
+	 * 로그인
+	 * */
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String getMain(Model model, ModelAndView modelAndView) throws Exception {
 
@@ -34,7 +36,6 @@ public class WebMainController {
 		return "/main";
 	}
 
-	// 로그인 화면(POST)
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
 	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,RedirectAttributes rttr) throws Exception {
 	
@@ -55,42 +56,43 @@ public class WebMainController {
 		return mav;
 	
 	}
-	/*public List<String> postMain(Model model, LogInVO vo, RedirectAttributes rttr) {
-		
-		try {
-			List<String> login = (List<String>)webMainService.login(vo);
-			System.out.println(login);
-			
-			if(login != null) {
-				System.out.println(">>>>>>>>>>>>Not Null");
-			} else {
-				System.out.println(">>>>>>>>>>>>Null");
-			}
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return (List<String>) vo;
-	}
-	*/
-	// 회원가입 화면(GET)
+	
+	/*
+	 * 회원가입
+	 * */
+//	@RequestMapping(value = "/join", method = RequestMethod.GET)
+//	public void getJoin() throws Exception {
+//
+//		logger.info("Join GET Controller >>>>>>>>>");
+//
+//		return;
+//	}
+//
+//	@RequestMapping(value = "/join", method = RequestMethod.POST)
+//	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
+//
+//		System.out.println("controller ===> " + vo1);
+//
+//		return;
+//	}
+	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public void getJoin() throws Exception {
+	public String getJoin() throws Exception {
 
 		logger.info("Join GET Controller >>>>>>>>>");
 
-		return;
+		return "/join";
 	}
 
-	// 회원가입 화면(POST)
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
+	public String postJoin(MemberVO vo1 ,HttpSession session) throws Exception {
 
-		System.out.println("controller ===> " + vo1);
+//		System.out.println("controller ===> " + vo1);
+		
+		logger.info("Join Post Controller >>>>>>>>>" + vo1);
 
-		return;
+		return "/join";
 	}
+
 
 }

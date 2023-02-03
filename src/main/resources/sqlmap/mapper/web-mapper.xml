@@ -9,7 +9,17 @@
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">
 		<![CDATA[
-			INSERT INTO joinmember VALUES(#{userId}, #{userPw}, #{userName}, #{userAge})
+			INSERT INTO joinmember 
+			(
+			  id,
+			  pw,
+			  name,
+			  age
+			)
+			VALUES
+			(
+			  #{userId}, #{userPw}, #{userName}, #{userAge}
+			)
 		]]>
 	</insert>
 
