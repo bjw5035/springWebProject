@@ -9,12 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myweb.board.service.WebMainService;
 import com.myweb.board.vo.LogInVO;
 import com.myweb.board.vo.MemberVO;
+
+import java.util.Map;
 
 @Controller
 public class WebMainController {
@@ -29,7 +32,7 @@ public class WebMainController {
 	 * 로그인
 	 * */
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String getMain(Model model, ModelAndView modelAndView) throws Exception {
+	public String getMain() throws Exception {
 
 		logger.info("main GET Controller >>>>>>>>>");
 
@@ -56,26 +59,10 @@ public class WebMainController {
 		return mav;
 	
 	}
-	
+
 	/*
-	 * 회원가입
-	 * */
-//	@RequestMapping(value = "/join", method = RequestMethod.GET)
-//	public void getJoin() throws Exception {
-//
-//		logger.info("Join GET Controller >>>>>>>>>");
-//
-//		return;
-//	}
-//
-//	@RequestMapping(value = "/join", method = RequestMethod.POST)
-//	public void postJoin(Model model, MemberVO vo1 ,HttpSession session, RedirectAttributes rttr) throws Exception {
-//
-//		System.out.println("controller ===> " + vo1);
-//
-//		return;
-//	}
-	
+	* 회원가입
+	* */
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String getJoin() throws Exception {
 
@@ -85,14 +72,22 @@ public class WebMainController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String postJoin(MemberVO vo1 ,HttpSession session) throws Exception {
+	public ModelAndView postJoin(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
 
-//		System.out.println("controller ===> " + vo1);
-		
-		logger.info("Join Post Controller >>>>>>>>>" + vo1);
+		logger.info("Join Post Controller >>>>>>>>>" + map);
+		ModelAndView mav = new ModelAndView();
 
-		return "/join";
+		String poJoin = webMainService.join(map);
+
+		if (poJoin == null) {
+			mav.setViewName("redirect:/login");
+		} else {
+			mav.setViewName("redirect:/join");
+		}
+
+		return mav;
+
+//		return "/join";
 	}
-
 
 }

@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.myweb.board.dao.WebMainDao;
 import com.myweb.board.vo.LogInVO;
-import com.myweb.board.vo.MemberVO;
+
+import java.util.Map;
 
 @Service
 public class WebMainServiceImpl implements WebMainService {
@@ -24,13 +25,13 @@ public class WebMainServiceImpl implements WebMainService {
 		return dao.login(vo);
 	}
 
-	
-	@Override
-	public String join(MemberVO vo1) throws Exception {
-		
-		logger.info("ServiceImpl >>>> " + vo1);
 
-		return dao.join(vo1);
+	@Override
+	public String join(Map<String, Object> map) throws Exception {
+
+		logger.info("ServiceImpl >>>> " + map);
+
+		return dao.join(map);
 	}
 
 }

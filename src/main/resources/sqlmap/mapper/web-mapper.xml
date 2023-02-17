@@ -7,19 +7,13 @@
 <mapper namespace="web">
 
 	<!-- 회원가입 -->
-	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">
+<!--	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">-->
+	<insert id="join" parameterType="hashmap">
 		<![CDATA[
-			INSERT INTO joinmember 
-			(
-			  id,
-			  pw,
-			  name,
-			  age
-			)
+			INSERT INTO webdb.joinmember
+			( id, pw, name, age )
 			VALUES
-			(
-			  #{userId}, #{userPw}, #{userName}, #{userAge}
-			)
+			( #{userId} ,#{userPw} ,#{userName} ,#{userAge} )
 		]]>
 	</insert>
 
@@ -27,12 +21,12 @@
 <!--	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">-->
 	<select id="login" parameterType="com.myweb.board.vo.LogInVO">
 		<![CDATA[
-			SELECT * FROM login WHERE id = #{id} AND pw = #{pw}
+			SELECT * FROM webdb.login WHERE id = #{id} AND pw = #{pw}
 		]]>
 	</select>
 
 	<!-- 게시물 리스트 -->
-	<select id="board_list" resultType="hashmap">
+	<!--<select id="board_list" resultType="hashmap">
 		<![CDATA[
 			INSERT INTO t_board
 				(
@@ -50,16 +44,16 @@
 				)
 		]]>
 	</select>
-	
+	-->
 	<!-- 마이페이지 수정 -->
-	<update id="update_myModify">
+	<!--<update id="update_myModify">
 		<![CDATA[
 			UPDATE joinmember 
 			set pw=#{userPw}
 				,name=#{userName} 
 			where id=#{userId}
 		]]>
-	</update>
+	</update>-->
 	
 	<!-- <delete id="delete_account"> <![CDATA[ delete from userinfo where id 
 		= #{id} ]]> </delete> -->

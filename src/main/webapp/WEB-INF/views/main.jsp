@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
+<%--	<script>
 		$(document).ready(function () {
 			$("#btnLogin").click(function () {
 				// 태그.val() : 태그에 입력된 값
@@ -26,7 +26,7 @@
 				}
 			});
 		});
-	</script>
+	</script>--%>
 </head>
 <body>
 	<form action="" method="POST">

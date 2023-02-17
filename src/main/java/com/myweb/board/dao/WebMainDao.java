@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import com.myweb.board.vo.LogInVO;
 import com.myweb.board.vo.MemberVO;
 
+import java.util.Map;
+
 @Repository
 public class WebMainDao {
 
@@ -31,12 +33,13 @@ public class WebMainDao {
 	 * 회원가입 
 	 * 
 	 * */
-	public String join(MemberVO vo1) throws Exception {
+	public String join(Map<String, Object> map) throws Exception {
 		
-		logger.info("dao >>>> " + vo1);
+		logger.info("dao >>>> " + map);
 		
-		return sqlSessionTemplate.toString();
-		
+//		return sqlSessionTemplate.insert("web.join", map);
+		return sqlSessionTemplate.selectOne("web.join", map);
+
 	}
 }
 
