@@ -8,7 +8,7 @@
 
 	<!-- 회원가입 -->
 <!--	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">-->
-	<insert id="join" parameterType="hashmap">
+	<insert id="join" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
 		<![CDATA[
 			INSERT INTO webdb.joinmember
 			( id, pw, name, age )
@@ -19,9 +19,14 @@
 
 	<!-- 로그인 -->
 <!--	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">-->
-	<select id="login" parameterType="com.myweb.board.vo.LogInVO">
+	<select id="login" parameterType="hashmap">
 		<![CDATA[
-			SELECT * FROM webdb.login WHERE id = #{id} AND pw = #{pw}
+		select A.id
+			  ,A.pw
+			  ,A.name
+		from webdb.joinmember A left join webdb.login B
+		  on A.id
+		 and A.pw
 		]]>
 	</select>
 

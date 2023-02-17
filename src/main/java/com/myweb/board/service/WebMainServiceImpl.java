@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myweb.board.dao.WebMainDao;
-import com.myweb.board.vo.LogInVO;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -20,9 +20,14 @@ public class WebMainServiceImpl implements WebMainService {
 
 
 	@Override
-	public LogInVO login(LogInVO vo) throws Exception {
+	public List<Object> login(Map<String, Object> map) throws Exception {
 
-		return dao.login(vo);
+		if (map == null) {
+			logger.info("impl false >>>> {}", map);
+		} else {
+			logger.info("impl true >>>> {}", map);
+		}
+		return dao.login(map);
 	}
 
 

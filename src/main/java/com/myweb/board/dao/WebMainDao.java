@@ -6,9 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.myweb.board.vo.LogInVO;
-import com.myweb.board.vo.MemberVO;
-
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -23,10 +21,11 @@ public class WebMainDao {
 	/* 
 	 * 로그인 
 	 * */
-	public LogInVO login(LogInVO vo) throws Exception {
+	public List<Object> login(Map<String, Object> map) throws Exception {
 
 
-		return sqlSessionTemplate.selectOne("web.login", vo);
+//		return sqlSessionTemplate.selectOne("web.login", vo);
+		return sqlSessionTemplate.selectList("web.login", map);
 	}
 	
 	/* 

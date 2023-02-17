@@ -17,6 +17,7 @@ import com.myweb.board.service.WebMainService;
 import com.myweb.board.vo.LogInVO;
 import com.myweb.board.vo.MemberVO;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -40,16 +41,14 @@ public class WebMainController {
 	}
 
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public ModelAndView postMain(ModelAndView modelAndView, Model model, LogInVO vo, HttpSession session,RedirectAttributes rttr) throws Exception {
+	public ModelAndView postMain(ModelAndView modelAndView, Model model, @RequestParam Map<String, Object> map, HttpSession session,RedirectAttributes rttr) throws Exception {
 	
 		logger.info("main POST Controller >>>>>>>>>");
 	
-		LogInVO login = webMainService.login(vo);
-		System.out.println(login);
-	
+		List<Object> login = webMainService.login(map);
+
 		ModelAndView mav = new ModelAndView();
-		logger.info("login", login);
-	
+
 		if (login != null) {
 			model.addAttribute("login", login);
 			mav.setViewName("redirect:/main");
@@ -80,7 +79,7 @@ public class WebMainController {
 		String poJoin = webMainService.join(map);
 
 		if (poJoin == null) {
-			mav.setViewName("redirect:/login");
+			mav.setViewName("redirect:/main");
 		} else {
 			mav.setViewName("redirect:/join");
 		}
