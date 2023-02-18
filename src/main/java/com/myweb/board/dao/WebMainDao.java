@@ -23,20 +23,19 @@ public class WebMainDao {
 	 * */
 	public List<Object> login(Map<String, Object> map) throws Exception {
 
+		logger.info("dao login >>>> {}", map);
 
-//		return sqlSessionTemplate.selectOne("web.login", vo);
 		return sqlSessionTemplate.selectList("web.login", map);
 	}
 	
 	/* 
-	 * 회원가입 
-	 * 
+	 * 회원가입
+	 * selectOne : 데이터를 한 개만 가져올때 사용한다.
 	 * */
 	public String join(Map<String, Object> map) throws Exception {
 		
 		logger.info("dao >>>> " + map);
 		
-//		return sqlSessionTemplate.insert("web.join", map);
 		return sqlSessionTemplate.selectOne("web.join", map);
 
 	}

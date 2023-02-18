@@ -7,7 +7,13 @@
 <mapper namespace="web">
 
 	<!-- 회원가입 -->
-<!--	<insert id="join" parameterType="com.myweb.board.vo.MemberVO">-->
+	<!-- insert : 데이터 입력(insert)을 나타내는 태그.
+	     id : 네임스페이스안에서 쿼리를 구분하는 유일한 식별자 역할을 한다.
+	     parameterType : 쿼리에 적용할 파라미터 타입. (map타입이 있다.)
+	     keyProperty, useGeneratedKeys : 두개는 한쌍이다. useGeneratedKeys가 true로 설정되면 Mybatis는 Insert쿼리 실행 후 생성된 PK를
+	                                     파라미터 객체의 keyProperty속성에 넣어준다. 사용법은 DAO에서 확인 가능.
+	    <![CDATA[ : 원시(Raw) 문자열을 나타낸다. <![CDATA[안에 있는 문자열은 <등의 태그 문자가 있더라도 인식하지 않는다.
+	-->
 	<insert id="join" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
 		<![CDATA[
 			INSERT INTO webdb.joinmember
@@ -18,15 +24,14 @@
 	</insert>
 
 	<!-- 로그인 -->
-<!--	<select id="login" parameterType="String" resultType="com.myweb.board.vo.LogInVO">-->
-	<select id="login" parameterType="hashmap">
+	<!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
+	<select id="login" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
-		select A.id
-			  ,A.pw
-			  ,A.name
-		from webdb.joinmember A left join webdb.login B
-		  on A.id
-		 and A.pw
+		select *
+		from webdb.joinmember
+		where 1=1
+		  and id = #{id}
+		  and pw = #{pw}
 		]]>
 	</select>
 
