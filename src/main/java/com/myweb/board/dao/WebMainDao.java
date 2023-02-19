@@ -22,7 +22,6 @@ public class WebMainDao {
 	 * 로그인 
 	 * */
 	public List<Object> login(Map<String, Object> map) throws Exception {
-
 		logger.info("dao login >>>> {}", map);
 
 		return sqlSessionTemplate.selectList("web.login", map);

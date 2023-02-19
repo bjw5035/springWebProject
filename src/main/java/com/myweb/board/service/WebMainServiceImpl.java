@@ -22,10 +22,10 @@ public class WebMainServiceImpl implements WebMainService {
 	@Override
 	public List<Object> login(Map<String, Object> map) throws Exception {
 
-		if (map == dao.login(map)) {
-			logger.info("Impl yes map == {}", map);
+		if (map == null) {
+			logger.info("null", map);
 		} else {
-			logger.info("Impl no map == {}", map);
+			logger.info("not null", map);
 		}
 		return dao.login(map);
 	}

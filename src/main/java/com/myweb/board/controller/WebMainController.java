@@ -46,16 +46,13 @@ public class WebMainController {
 		logger.info("main POST Controller >>>>>>>>>");
 	
 		List<Object> login = webMainService.login(map);
+		logger.info("controller login >>>> ", login);
 
 		ModelAndView mav = new ModelAndView();
 
-		if (login != null) {
-//			model.addAttribute("login", login);
-			rttr.addAttribute("login",login);
-			mav.setViewName("redirect:/list");
-		} else {
-			mav.setViewName("redirect:/main");
-		}
+		mav.addAllObjects(map);
+		mav.setViewName("/list");
+
 		return mav;
 
 	}
@@ -90,6 +87,26 @@ public class WebMainController {
 		} else {
 			mav.setViewName("redirect:/join");
 		}
+
+		return mav;
+	}
+
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String getList() throws Exception {
+
+		logger.info("List GET Controller >>>>>>>>>");
+
+		return "/list";
+	}
+
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	public ModelAndView postList(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
+
+		logger.info("List Post Controller >>>>>>>>>" + map);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:list");
+
 
 		return mav;
 	}
