@@ -30,10 +30,21 @@
 	</script>
 </head>
 <body>
-	<form action="" method="POST">
+<div class="label" type="head">
+	<form method="post" name="inputIdPw">
 		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"></label><br>
 		<label> 패스워드: <input type="password" id="pw"></label>
-		
+	</form>
+</div>
+<div>
+	<form class="btn" type="button" method="post">
+		<input type="submit" name="btnLogin" >
+		<button type="submit" id="login" name="login" align="center">로그인</button>
+
+	</form>
+</div>
+<form action="" method="POST">
+
 		<button type="submit" id="btnLogin" name="login" align="center">로그인</button>
 		<button type="submit" id="logout" align="center">로그아웃</button>
 		<button type="submit" id="btnJoin" align="center">회원가입</button>
