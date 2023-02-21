@@ -44,12 +44,13 @@
 
 	</form>
 </div>
-<form action="" method="POST">
+<%--<form action="" method="POST">
 
+	<input type="submit" value="로그인2">
 		<button type="submit" id="btnLogin" name="login" align="center">로그인</button>
 		<button type="submit" id="logout" align="center">로그아웃</button>
 		<button type="submit" id="btnJoin" align="center">회원가입</button>
-	</form>
+	</form>--%>
 	
 	<form action="/join.jsp" method="POST">
 		<a href="/join">회원가입</a>
