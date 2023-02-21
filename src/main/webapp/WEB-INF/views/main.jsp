@@ -30,6 +30,7 @@
 	</script>
 </head>
 <body>
+<%--test--%>
 <div class="label" type="head">
 	<form method="post" name="inputIdPw">
 		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"></label><br>
