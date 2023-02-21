@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<%--	<script>
-		$(document).ready(function () {
+	<script>
+		/*$(document).ready(function () {
 			$("#btnLogin").click(function () {
 				// 태그.val() : 태그에 입력된 값
 				// 태그.val('값') : 태그의 값을 변경
@@ -25,21 +25,34 @@
 					return;
 				}
 			});
-		});
-	</script>--%>
+		});*/
+		
+	</script>
 </head>
 <body>
-	<form action="" method="POST">
-		<label> 아이디: <input type="text" id="id"
-			style="width: auto; height: 30px;">
-		</label><br> <label> 패스워드: <input type="password" id="pw">
-		</label>
-
-		<%--		<button type="submit" id="btnLogin" align="center">로그인</button>--%>
-		<button type="submit" name="login" align="center">로그인</button>
-		
-		<%--		<button type="submit" id="logout" align="center">로그아웃</button>--%>
+<%--test--%>
+<div class="label" type="head">
+	<form method="post" name="inputIdPw">
+		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"></label><br>
+		<label> 패스워드: <input type="password" id="pw"></label>
+		<button type="submit" id="login" name="login" align="center">로그인</button>
+		<button type="button" id="join" name="login" align="center">회원가입</button>
 	</form>
+</div>
+<%--<div>
+	<form class="btn" type="button" method="post">
+		<input type="submit" name="btnLogin" >
+		
+
+	</form>
+</div>--%>
+<%--<form action="" method="POST">
+
+	<input type="submit" value="로그인2">
+		<button type="submit" id="btnLogin" name="login" align="center">로그인</button>
+		<button type="submit" id="logout" align="center">로그아웃</button>
+		<button type="submit" id="btnJoin" align="center">회원가입</button>
+	</form>--%>
 	
 	<form action="/join.jsp" method="POST">
 		<a href="/join">회원가입</a>

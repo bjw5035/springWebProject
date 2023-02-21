@@ -35,15 +35,17 @@
 	<form method="post" name="inputIdPw">
 		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"></label><br>
 		<label> 패스워드: <input type="password" id="pw"></label>
+		<button type="submit" id="login" name="login" align="center">로그인</button>
+		<button type="button" id="join" name="login" align="center">회원가입</button>
 	</form>
 </div>
-<div>
+<%--<div>
 	<form class="btn" type="button" method="post">
 		<input type="submit" name="btnLogin" >
-		<button type="submit" id="login" name="login" align="center">로그인</button>
+		
 
 	</form>
-</div>
+</div>--%>
 <%--<form action="" method="POST">
 
 	<input type="submit" value="로그인2">
