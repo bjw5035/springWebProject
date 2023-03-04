@@ -28,15 +28,28 @@
 		});*/
 		
 	</script>
+	<style>
+		div#side-left{
+			width: 200px;
+			height: 400px;
+			background-color: white;
+
+		}
+	</style>
 </head>
 <body>
 <%--test--%>
-<div class="label" type="head">
-	<form method="post" name="inputIdPw">
-		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px;"></label><br>
-		<label> 패스워드: <input type="password" id="pw"></label>
-		<button type="submit" id="login" name="login" align="center">로그인</button>
-		<button type="button" id="join" name="login" align="center">회원가입</button>
+
+<div class="container" type="header">
+	<form action="/main" method="post" name="inputIdPw">
+		<label> 아이디: <input type="text" id="id" style="width: auto; height: 30px; color: black;"></label><br>
+		<div class="passowrd" style="background-color: yellow">
+			<label> 패스워드: <input type="password" id="pw" style="width: auto; height: 30px;" ></label><br>
+		</div>
+		<div class="accordion-button" style="background-color: #0d6efd">
+			<button type="submit" id="login" name="login" align="center">로그인</button>
+			<button type="button" id="join" name="login" align="center">회원가입</button>
+		</div>
 	</form>
 </div>
 <%--<div>
