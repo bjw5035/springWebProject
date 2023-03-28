@@ -28,10 +28,10 @@
 	<select id="login" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 		select *
-		from webdb.joinmember
+		from webdb.login
 		where 1=1
-		  and id = #{id}
-		  and pw = #{pw}
+		  AND id = #{id}
+		  AND pw = #{pw}
 		]]>
 	</select>
 

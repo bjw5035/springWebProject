@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.myweb.board.dao.WebMainDao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,14 +21,15 @@ public class WebMainServiceImpl implements WebMainService {
 
 
 	@Override
-	public List<Object> login(Map<String, Object> map) throws Exception {
+	public List<String> login(Map<String, Object> map) throws Exception {
 
-		if (map == null) {
-			logger.info("null", map);
-		} else {
-			logger.info("not null", map);
-		}
-		return dao.login(map);
+		logger.info("login >> + ", map);
+
+//		List<String> login = new ArrayList<>();
+//		login.addAll(login);
+
+		//		return dao.login(map);
+		return login(map);
 	}
 
 

@@ -1,7 +1,6 @@
 package com.myweb.board.controller;
 
-import javax.servlet.http.HttpSession;
-
+import com.myweb.board.service.WebMainService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.myweb.board.service.WebMainService;
-import com.myweb.board.vo.LogInVO;
-import com.myweb.board.vo.MemberVO;
-
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -44,9 +40,9 @@ public class WebMainController {
 	public ModelAndView postMain(ModelAndView modelAndView, Model model, @RequestParam Map<String, Object> map, HttpSession session,RedirectAttributes rttr) throws Exception {
 	
 		logger.info("main POST Controller >>>>>>>>>");
-	
-		List<Object> login = webMainService.login(map);
-		logger.info("controller login >>>> ", login);
+
+		List<String> login = webMainService.login(map);
+//		logger.info("controller login >>>> ", login);
 
 		ModelAndView mav = new ModelAndView();
 
