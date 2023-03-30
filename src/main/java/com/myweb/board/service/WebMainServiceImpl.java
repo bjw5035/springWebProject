@@ -25,8 +25,9 @@ public class WebMainServiceImpl implements WebMainService {
 
 		logger.info("login >> + ", map);
 
-//		List<String> login = new ArrayList<>();
-//		login.addAll(login);
+		List<String> login1 = new ArrayList<>();
+		logger.info("login1 ========> " + login1);
+//		login1.addAll();
 
 		//		return dao.login(map);
 		return login(map);

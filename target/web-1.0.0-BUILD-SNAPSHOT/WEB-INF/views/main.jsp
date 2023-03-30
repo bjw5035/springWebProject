@@ -38,7 +38,6 @@
 	</style>
 </head>
 <body>
-<%--test--%>
 
 <div class="container" type="header">
 	<form action="/main" method="post" name="inputIdPw">
@@ -48,28 +47,12 @@
 		</div>
 		<div class="accordion-button" style="background-color: #0d6efd">
 			<button type="submit" id="login" name="login" align="center">로그인</button>
-			<button type="button" id="join" name="login" align="center">회원가입</button>
+
+			<%-- onClick 사용시 join.jsp를 사용하면 에러남, .jsp를 사용하지 않아야함.--%>
+			<button type="button" id="join" onclick="location.href='join'" align="center">회원가입</button>
 		</div>
 	</form>
 </div>
-<%--<div>
-	<form class="btn" type="button" method="post">
-		<input type="submit" name="btnLogin" >
-		
-
-	</form>
-</div>--%>
-<%--<form action="" method="POST">
-
-	<input type="submit" value="로그인2">
-		<button type="submit" id="btnLogin" name="login" align="center">로그인</button>
-		<button type="submit" id="logout" align="center">로그아웃</button>
-		<button type="submit" id="btnJoin" align="center">회원가입</button>
-	</form>--%>
-	
-	<form action="/join.jsp" method="POST">
-		<a href="/join">회원가입</a>
-	</form>
 
 </body>
 </html>

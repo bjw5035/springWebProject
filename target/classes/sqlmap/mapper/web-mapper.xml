@@ -16,7 +16,7 @@
 	-->
 	<insert id="join" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
 		<![CDATA[
-			INSERT INTO webdb.joinmember
+			INSERT INTO webdb.member
 			( id, pw, name, age )
 			VALUES
 			( #{userId} ,#{userPw} ,#{userName} ,#{userAge} )
@@ -28,10 +28,10 @@
 	<select id="login" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 		select *
-		from webdb.joinmember
+		from webdb.member
 		where 1=1
-		  and id = #{id}
-		  and pw = #{pw}
+		  AND id = #{id}
+		  AND pw = #{pw}
 		]]>
 	</select>
 
