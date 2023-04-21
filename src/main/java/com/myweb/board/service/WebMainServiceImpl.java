@@ -1,14 +1,12 @@
 package com.myweb.board.service;
 
+import com.myweb.board.dao.WebMainDao;
+import com.myweb.board.vo.MemberVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.myweb.board.dao.WebMainDao;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -21,16 +19,18 @@ public class WebMainServiceImpl implements WebMainService {
 
 
 	@Override
-	public List<String> login(Map<String, Object> map) throws Exception {
+	public String login(MemberVO memberVO) throws Exception {
 
-		logger.info("login >> + ", map);
+		logger.info("Impl memberVO >>> {}", memberVO);
 
-		List<String> login1 = new ArrayList<>();
-		logger.info("login1 ========> " + login1);
-//		login1.addAll();
+		memberVO.getUserId();
 
-		//		return dao.login(map);
-		return login(map);
+		if (!memberVO.equals(memberVO)) {
+			logger.info("false >>> {}", memberVO);
+		} else {
+			logger.info("true >>> {}", memberVO);
+		}
+		return dao.login(memberVO);
 	}
 
 
