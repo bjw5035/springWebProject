@@ -25,13 +25,14 @@
 
 	<!-- 로그인 -->
 	<!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
+<!--	<select id="login" parameterType="com.myweb.board.vo.MemberVO" resultType="hashmap">-->
 	<select id="login" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
 		select *
 		from webdb.member
 		where 1=1
-		  AND id = #{id}
-		  AND pw = #{pw}
+		  AND id = #{userId}
+		  AND pw = #{userPw}
 		]]>
 	</select>
 
