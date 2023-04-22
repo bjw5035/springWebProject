@@ -23,8 +23,6 @@ public class WebMainServiceImpl implements WebMainService {
 
 		logger.info("Impl memberVO >>> {}", memberVO);
 
-		memberVO.getUserId();
-
 		if (!memberVO.equals(memberVO)) {
 			logger.info("false >>> {}", memberVO);
 		} else {

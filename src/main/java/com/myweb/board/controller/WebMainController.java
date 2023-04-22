@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -38,14 +36,18 @@ public class WebMainController {
 	}
 
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public ModelAndView postMain(Model model, MemberVO memberVO, RedirectAttributes rttr) throws Exception {
-
-		logger.info("main POST Controller >>>>>>>>>");
+	public String postMain(Model model, MemberVO memberVO) throws Exception {
 
 		String memberVO1 = webMainService.login(memberVO);
-		ModelAndView mav = new ModelAndView();
 
-		return mav;
+
+//		ModelAndView mav = new ModelAndView();
+
+		if (!memberVO1.equals(webMainService.login(memberVO))) {
+			return "redirect:/main";
+		} else {
+			return "redirect:/list";
+		}
 	}
 
 	/*
