@@ -31,7 +31,6 @@ public class WebMainController {
 
 		return "main";
 	}
-
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String postRoot() throws Exception {
 
@@ -50,7 +49,6 @@ public class WebMainController {
 
 		return "login";
 	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String postLogin(Model model, MemberVO memberVO) throws Exception {
 
@@ -59,7 +57,7 @@ public class WebMainController {
 		if (!memberVO1.equals(webMainService.login(memberVO))) {
 			return "redirect:/login";
 		} else {
-			return "redirect:/main";
+			return "redirect:/";
 		}
 	}
 
@@ -73,7 +71,6 @@ public class WebMainController {
 
 		return "/join";
 	}
-
 	/*
     method = RequestMethod.POST : http 메소드는 POST 방식으로 처리한다.
     @RequestParam : HTTP 파라미터를 map 변수에 자동으로 바인딩한다.
@@ -107,7 +104,6 @@ public class WebMainController {
 
 		return "boardInsert";
 	}
-
 	@RequestMapping(value = "/boardInsert", method = RequestMethod.POST)
 	public ModelAndView postBoardInsert(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
 

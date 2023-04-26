@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
-	<title>Sign in to Bootstrap Themes</title>
+	<title>Sign in</title>
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" href="https://themes.getbootstrap.com/xmlrpc.php" />
 
@@ -101,7 +101,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
 <%--	<div class="container"><a href="https://themes.getbootstrap.com" class="navbar-brand" href="/">Bootstrap Themes</a>--%>
-	<div class="container"><a href="/main" class="navbar-brand" href="/">메인화면 이동</a>
+	<div class="container"><a href="main" class="navbar-brand">메인화면 이동</a>
 
 			<ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
 				<li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/signin/">Sign in</a></li>
