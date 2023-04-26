@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -169,14 +168,14 @@
                 <li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/guide">The Guide</a></li>
             </ul>
             <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
-<%--                <li class="nav-item"><a class="nav-link" href="main">Sign in</a></li>--%>
+                <li class="nav-item"><a class="nav-link" href="login">Sign in</a></li>
 <%--                <li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/my-account/">Sign up</a></li>--%>
                 <li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/my-account/">Sign up</a></li>
             </ul>
             <ul class="navbar-nav d-lg-none">
                 <li class="nav-item-divider"></li>
 <%--                <li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/signin/">Sign in</a></li>--%>
-<%--                <li class="nav-item"><a class="nav-link" href="main.jsp">Sign in</a></li>--%>
+                <li class="nav-item"><a class="nav-link" href="login">Sign in</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://themes.getbootstrap.com/my-account/">Sign up</a></li>
             </ul>
         </div>

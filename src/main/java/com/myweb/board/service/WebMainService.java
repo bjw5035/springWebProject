@@ -2,7 +2,6 @@ package com.myweb.board.service;
 
 import com.myweb.board.vo.MemberVO;
 
-import java.util.List;
 import java.util.Map;
 
 public interface WebMainService {

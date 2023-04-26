@@ -21,12 +21,13 @@
 				placeholder="게시판 내용"></textarea>
 		</div>
 		<div class="createForm">
-			<label>작성자</label> <input type="text" name="b_writer"
-				class="createForm" placeholder="작성자">
+			<label>작성자</label>
+			<input type="text" name="b_writer"	class="createForm" placeholder="작성자">
 		</div>
 
 		<div class="Formfooter">
-			<button type="submit" class="btn_button">작성하기</button>
+			<button type="submit" class="btn_button">등록하기</button>
+			<button type="button" href="main" class="btn_button">취소하기</button>
 		</div>
 
 	</form>

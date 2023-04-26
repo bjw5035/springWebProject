@@ -24,29 +24,42 @@ public class WebMainController {
 	// 로깅을 위한 변수
 	private static final Logger logger = LoggerFactory.getLogger(WebMainController.class);
 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String getRoot() throws Exception {
+
+		logger.info("Root GET Controller >>>>>>>>>");
+
+		return "main";
+	}
+
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String postRoot() throws Exception {
+
+		logger.info("Root Post Controller >>>>>>>>>");
+
+		return "main";
+	}
+
 	/*
 	 * 로그인
 	 * */
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String getMain() throws Exception {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String getLogin() throws Exception {
 
-		logger.info("main GET Controller >>>>>>>>>");
+		logger.info("Login GET Controller >>>>>>>>>");
 
-		return "/main";
+		return "login";
 	}
 
-	@RequestMapping(value = "/main", method = RequestMethod.POST)
-	public String postMain(Model model, MemberVO memberVO) throws Exception {
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String postLogin(Model model, MemberVO memberVO) throws Exception {
 
 		String memberVO1 = webMainService.login(memberVO);
 
-
-//		ModelAndView mav = new ModelAndView();
-
 		if (!memberVO1.equals(webMainService.login(memberVO))) {
-			return "redirect:/main";
+			return "redirect:/login";
 		} else {
-			return "redirect:/list";
+			return "redirect:/main";
 		}
 	}
 
@@ -84,21 +97,24 @@ public class WebMainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String getList() throws Exception {
+	/*
+	* 게시판 등록
+	* */
+	@RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
+	public String getBoardInsert() throws Exception {
 
-		logger.info("List GET Controller >>>>>>>>>");
+		logger.info("boardInsert GET Controller >>>>>>>>>");
 
-		return "/list";
+		return "boardInsert";
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.POST)
-	public ModelAndView postList(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
+	@RequestMapping(value = "/boardInsert", method = RequestMethod.POST)
+	public ModelAndView postBoardInsert(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
 
-		logger.info("List Post Controller >>>>>>>>>" + map);
+		logger.info("boardInsert Post Controller >>>>>>>>>" + map);
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:list");
+		mav.setViewName("redirect:main");
 
 
 		return mav;
