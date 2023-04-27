@@ -216,7 +216,9 @@
                         <ul class="row">
                             <li class="col-6">
                                 <div class="theme-card">
-
+                                    <table class="subTitle" border="1" cellspacing="0" summary="test">
+                                        <caption>게시판 리스트</caption>
+                                    </table>
 <%--                                    <div class="theme-card__body">--%>
 <%--                                        <a class="d-block" href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/">--%>
 <%--                                            <img data-src='https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-540x405.jpg' data-srcset='https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-800x600.jpg 800w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0.jpg 1200w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-768x576.jpg 768w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-600x450.jpg 600w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-200x150.jpg 200w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-400x300.jpg 400w, https://themes.getbootstrap.com/wp-content/uploads/2022/11/phoenix-v1.11.0-540x405.jpg 540w' data-sizes='auto' class='lazyload theme-card__img'>--%>
@@ -233,17 +235,10 @@
 <%--                                            <ul class="rating">--%>
 <%--                                                <li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li>                </ul>--%>
 <%--                                        </div>--%>
-                                    <div class="theme-card__body">
-                                        <a class="dropdown-header">
-                                            <label> 번호 </label>
-                                            <label> 제목 </label>
-                                            <label> 내용 </label>
-                                        </a>
-                                    </div>
+
                                     </div>
                                 </div>
                             </li>
-
 <%--                            <li class="col-6">--%>
 <%--                                <div class="theme-card">--%>
 <%--                                    <div class="theme-card__body">--%>
@@ -566,30 +561,30 @@
 <%--                                </div>--%>
 <%--                            </li>--%>
 
-                            <li class="col-6">
-                                <div class="theme-card">
-                                    <div class="theme-card__body">
-                                        <a class="d-block" href="https://themes.getbootstrap.com/product/bubbly-cms-dashboard-next-js-theme-react/">
-                                            <img data-src='https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-540x405.jpg' data-srcset='https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-800x600.jpg 800w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900.jpg 1200w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-768x576.jpg 768w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-600x450.jpg 600w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-200x150.jpg 200w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-400x300.jpg 400w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-540x405.jpg 540w' data-sizes='auto' class='lazyload theme-card__img'>
-                                        </a>
+<%--                            <li class="col-6">--%>
+<%--                                <div class="theme-card">--%>
+<%--                                    <div class="theme-card__body">--%>
+<%--                                        <a class="d-block" href="https://themes.getbootstrap.com/product/bubbly-cms-dashboard-next-js-theme-react/">--%>
+<%--                                            <img data-src='https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-540x405.jpg' data-srcset='https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-800x600.jpg 800w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900.jpg 1200w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-768x576.jpg 768w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-600x450.jpg 600w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-200x150.jpg 200w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-400x300.jpg 400w, https://themes.getbootstrap.com/wp-content/uploads/2021/07/bubbly-react-1-3-1200x900-540x405.jpg 540w' data-sizes='auto' class='lazyload theme-card__img'>--%>
+<%--                                        </a>--%>
 
-                                        <a class="theme-card__body__overlay btn btn-brand btn-sm" target="_blank" href="https://themes.getbootstrap.com/preview/?theme_id=93418">Live preview</a>
-                                    </div>
-                                    <div class="theme-card__footer">
-                                        <div class="theme-card__footer__item"><a class="theme-card__title mr-1" href="https://themes.getbootstrap.com/product/bubbly-cms-dashboard-next-js-theme-react/">Bubbly – CMS &#038; Dashboard Next.js Theme [React]</a>
-                                            <p class="theme-card__info">
-                                            <ul class="prod_cats_list"><li><a href="https://themes.getbootstrap.com/product-category/admin-dashboard/">Admin &amp; Dashboard</a></li></ul>                </p>
-                                        </div>
-                                        <div class="theme-card__footer__item">
-                                            <p class="theme-card__price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>39.00</span></p>
-                                            <ul class="rating">
-                                                <li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li>                </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+<%--                                        <a class="theme-card__body__overlay btn btn-brand btn-sm" target="_blank" href="https://themes.getbootstrap.com/preview/?theme_id=93418">Live preview</a>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="theme-card__footer">--%>
+<%--                                        <div class="theme-card__footer__item"><a class="theme-card__title mr-1" href="https://themes.getbootstrap.com/product/bubbly-cms-dashboard-next-js-theme-react/">Bubbly – CMS &#038; Dashboard Next.js Theme [React]</a>--%>
+<%--                                            <p class="theme-card__info">--%>
+<%--                                            <ul class="prod_cats_list"><li><a href="https://themes.getbootstrap.com/product-category/admin-dashboard/">Admin &amp; Dashboard</a></li></ul>                </p>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="theme-card__footer__item">--%>
+<%--                                            <p class="theme-card__price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>39.00</span></p>--%>
+<%--                                            <ul class="rating">--%>
+<%--                                                <li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li><li class="rating__item rating__item--active"></li>                </ul>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </li>--%>
                         </ul>
-                        <nav><ul class="pagination justify-content-center"><li  class='page-item active'><span aria-current="page" class="page-numbers current">1</span></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/2/?orderby=date">2</a></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/3/?orderby=date">3</a></li><li class='page-item'><span class="page-numbers dots">&hellip;</span></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/6/?orderby=date">6</a></li><li class='page-item'><a class="next page-numbers" href="https://themes.getbootstrap.com/shop/page/2/?orderby=date"><span aria-hidden="true"><i class="bootstrap-themes-icon-right-open"></i></span><span class="sr-only">Next</span></a></li></ul></nav>
+<%--                        <nav><ul class="pagination justify-content-center"><li  class='page-item active'><span aria-current="page" class="page-numbers current">1</span></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/2/?orderby=date">2</a></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/3/?orderby=date">3</a></li><li class='page-item'><span class="page-numbers dots">&hellip;</span></li><li class='page-item'><a class="page-numbers" href="https://themes.getbootstrap.com/shop/page/6/?orderby=date">6</a></li><li class='page-item'><a class="next page-numbers" href="https://themes.getbootstrap.com/shop/page/2/?orderby=date"><span aria-hidden="true"><i class="bootstrap-themes-icon-right-open"></i></span><span class="sr-only">Next</span></a></li></ul></nav>--%>
                     </main></div>
                 </div><!-- end .col -->
             </div>
