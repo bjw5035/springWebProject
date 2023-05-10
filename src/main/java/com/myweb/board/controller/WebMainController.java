@@ -57,7 +57,7 @@ public class WebMainController {
 		if (!memberVO1.equals(webMainService.login(memberVO))) {
 			return "redirect:/login";
 		} else {
-			return "redirect:/";
+			return "redirect:main";
 		}
 	}
 
@@ -69,7 +69,7 @@ public class WebMainController {
 
 		logger.info("Join GET Controller >>>>>>>>>");
 
-		return "/join";
+		return "join";
 	}
 	/*
     method = RequestMethod.POST : http 메소드는 POST 방식으로 처리한다.

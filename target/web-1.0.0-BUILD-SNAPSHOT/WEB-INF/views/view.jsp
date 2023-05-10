@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -48,7 +50,7 @@
             </div>
             <div class="bt_wrap">
                 <a href="list.html" class="on">목록</a>
-                <a href="edit.html">수정</a>
+                <a href="edit.jsp">수정</a>
             </div>
         </div>
     </div>
