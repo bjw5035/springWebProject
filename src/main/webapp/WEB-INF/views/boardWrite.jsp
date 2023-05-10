@@ -14,7 +14,7 @@
 <body>
 <div class="container">
 	<h2>게시판 글쓰기</h2>
-	<form action="write.jsp" method="post">
+	<form action="" method="post">
 <%--		<div class="form-group">--%>
 <%--			<label for="title">제목</label>--%>
 <%--			<!-- placeholder 속성 입력한 데이터가 없는 경우 배경으로 나타난다.실제적으로 입력을 100자까지로 지정 -->--%>
@@ -52,7 +52,7 @@
 				<textarea class="form-control" id="exampleFormControlTextarea1" name="contents" rows="10"></textarea>
 			</div>
 			<button type="submit" class="btn btn-info">등록하기</button>
-			<button type="button" class="btn btn-secondary">목록으로</button>
+			<button type="button" class="btn btn-secondary" onclick="location.href='/'">목록으로</button>
 		</div>
 	</form>
 </div>

@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%>
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="list.html" class="on">목록</a>
+                <a href="list.jsp" class="on">목록</a>
                 <a href="edit.jsp">수정</a>
             </div>
         </div>

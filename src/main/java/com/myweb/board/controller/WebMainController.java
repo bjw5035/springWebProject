@@ -97,14 +97,14 @@ public class WebMainController {
 	/*
 	* 게시판 등록
 	* */
-	@RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
+	@RequestMapping(value = "/boardWrite", method = RequestMethod.GET)
 	public String getBoardInsert() throws Exception {
 
 		logger.info("boardInsert GET Controller >>>>>>>>>");
 
-		return "boardInsert";
+		return "boardWrite";
 	}
-	@RequestMapping(value = "/boardInsert", method = RequestMethod.POST)
+	@RequestMapping(value = "/boardWrite", method = RequestMethod.POST)
 	public ModelAndView postBoardInsert(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
 
 		logger.info("boardInsert Post Controller >>>>>>>>>" + map);
