@@ -50,14 +50,15 @@ public class WebMainController {
 		return "login";
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String postLogin(Model model, MemberVO memberVO) throws Exception {
+	public String postLogin(Model model, MemberVO memberVO, HttpSession session) throws Exception {
 
 		String memberVO1 = webMainService.login(memberVO);
 
 		if (!memberVO1.equals(webMainService.login(memberVO))) {
 			return "redirect:/login";
 		} else {
-			return "redirect:main";
+			session.setAttribute("userId", memberVO.getUserId());
+			return "redirect:/";
 		}
 	}
 
@@ -108,10 +109,15 @@ public class WebMainController {
 	public ModelAndView postBoardInsert(@RequestParam Map<String, Object> map, HttpSession session) throws Exception {
 
 		logger.info("boardInsert Post Controller >>>>>>>>>" + map);
+		session.getAttribute("userId");
+		String boardInsert = webMainService.boardInsert(map);
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:main");
-
+		if (map != null) {
+			mav.setViewName("redirect:/");
+		} else {
+			mav.setViewName("redirect:boardWrite");
+		}
 
 		return mav;
 	}

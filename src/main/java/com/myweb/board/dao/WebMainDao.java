@@ -39,6 +39,11 @@ public class WebMainDao {
 		return sqlSessionTemplate.selectOne("web.join", map);
 
 	}
+
+	public String boardInsert(Map<String, Object> map) throws Exception {
+
+		return sqlSessionTemplate.selectOne("web.boardInsert", map);
+	}
 }
 
 

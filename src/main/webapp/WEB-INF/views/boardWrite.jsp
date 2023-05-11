@@ -40,16 +40,16 @@
 <%--		<button type="submit" class="btn btn-default">등록</button>--%>
 		<div class="container">
 			<div class="form-group">
-				<label for="titleFormControlInput">제목</label>
-				<input type="text" class="form-control" id="titleFormControlInput" name="title" placeholder="제목을 작성해주세요.">
-			</div>
-			<div class="form-group">
 				<label for="writerFormControlInput">작성자</label>
-				<input type="text" class="form-control" id="writerFormControlInput" name="create_id" placeholder="이름을 적어주세요.">
+				<input type="text" class="form-control" id="writerFormControlInput" value="${userId}" readonly="readonly" name="userId" placeholder="이름을 적어주세요.">
 			</div>
 			<div class="form-group">
-				<label for="exampleFormControlTextarea1">내용</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" name="contents" rows="10"></textarea>
+				<label for="title">제목</label>
+				<input type="text" class="form-control" id="title" name="title" placeholder="제목을 작성해주세요.">
+			</div>
+			<div class="form-group">
+				<label for="contents">내용</label>
+				<textarea class="form-control" id="contents" name="contents" rows="10"></textarea>
 			</div>
 			<button type="submit" class="btn btn-info">등록하기</button>
 			<button type="button" class="btn btn-secondary" onclick="location.href='/'">목록으로</button>

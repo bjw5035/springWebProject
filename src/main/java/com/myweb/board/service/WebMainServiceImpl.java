@@ -40,4 +40,10 @@ public class WebMainServiceImpl implements WebMainService {
 		return dao.join(map);
 	}
 
+	@Override
+	public String boardInsert(Map<String, Object> map) throws Exception {
+
+		return dao.boardInsert(map);
+	}
+
 }
