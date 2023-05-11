@@ -12,12 +12,11 @@
 </head>
 <body>
 <div style="float: none; margin: 0 auto;">
-    <h1>Login</h1>
     <form action="" name="LoginForm" method="post">
         <label>ID</label>
-        <input type="text" name="userId">
+        <input type="text" name="userId"><br>
         <label>PW</label>
-        <input type="password" name="userPw">
+        <input type="password" name="userPw"><br>
 
         <%-- Form안에 들어가있지 않으면 작동을 하지 않음  --%>
         <button type="submit" id="login">login</button>

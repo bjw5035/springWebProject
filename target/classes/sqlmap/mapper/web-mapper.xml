@@ -36,6 +36,16 @@
 		]]>
 	</select>
 
+    <!-- 게시물 등록	-->
+	<insert id="boardInsert" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
+		<![CDATA[
+			INSERT INTO webdb.board
+				(TITLE, CONTENTS)
+			VALUES
+				(#{title},#{contents})
+		]]>
+	</insert>
+
 	<!-- 게시물 리스트 -->
 	<!--<select id="board_list" resultType="hashmap">
 		<![CDATA[
