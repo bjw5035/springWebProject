@@ -6,6 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    // 세션 값 가져오기: session.getAttribute(String name);
+    // 인증된 세션이 없는경우, 해당페이지를 볼 수 없게 함.
+    if (session.getAttribute("signedUser") == null) {
+        response.sendRedirect("logout.jsp");
+    }
+%>
 <html>
 <head>
     <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -18,34 +25,15 @@
     <title>Welcome</title>
 </head>
 <body>
+    <h1><%= session.getAttribute("signedUser") %>님 <small>반갑습니다.</small></h1>
+    <a href="logout.jsp">로그아웃</a>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="./home.jsp">Home</a>
+                <a class="navbar-brand" href="main">Home</a>
             </div>
         </div>
     </nav>
-    <%! String greeting = "Welcome to Web Shopping Mall";
-        String tagline = "Welcome to Web Market!" ;%>
-
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-3">
-                <%= greeting%>
-            </h1>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="text-center">
-            <h3>
-                    <%= tagline %>
-            </h3>
-        </div>
-    </div>
-    <footer class="container">
-        <p>&copy; WebMarket</p>
-    </footer>
 
 </body>
 </html>

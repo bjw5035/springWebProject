@@ -10,7 +10,7 @@
 <head>
     <title>메인게시판</title>
 <%--    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">--%>
-    <meta name="viewport" content="width=device-width", initial-scale"="1">
+    <meta name="viewport" content="width=device-width", initial-scale = "1">
     <link rel="stylesheet" href="resources/css/bootstrap.css">
 </head>
 <body>
@@ -36,6 +36,7 @@
             <li><a href="/">메인</a></li>
             <li><a href="login">로그인</a></li>
             <li><a href="join">회원가입</a></li>
+            <li><a href="logout">로그아웃</a></li>
 <%--            <li class="active"><a href="bbs.jsp">게시판</a></li>--%>
         </ul>
         <%
@@ -49,6 +50,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="login">로그인</a></li>
                     <li><a href="join">회원가입</a></li>
+                    <li><a href="logout">로그아웃</a></li>
                 </ul>
             </li>
         </ul>
@@ -57,7 +59,7 @@
         %>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리<span class="caret"></span></a>
+                <a href="myModify" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리<span class="caret"></span></a>
 <%--                <ul class="dropdown-menu">--%>
 <%--                    <li><a href="logoutAction.jsp">로그아웃</a></li>--%>
 <%--                </ul>--%>

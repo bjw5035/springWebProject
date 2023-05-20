@@ -37,7 +37,7 @@
 <%--	<input type="radio" name="gender" value="f">여자--%>
 
 	<button type="submit" value="가입">가입</button>
-	<button type="button" onclick="location.href='main'">메인</button>
+	<button type="button" onclick="location.href='/'">메인</button>
 
 </form>
 </body>

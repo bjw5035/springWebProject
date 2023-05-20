@@ -52,6 +52,7 @@ public class WebMainController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String postLogin(Model model, MemberVO memberVO, HttpSession session) throws Exception {
 
+		logger.info("Login Start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		String memberVO1 = webMainService.login(memberVO);
 
 		if (!memberVO1.equals(webMainService.login(memberVO))) {
@@ -60,6 +61,24 @@ public class WebMainController {
 			session.setAttribute("userId", memberVO.getUserId());
 			return "redirect:/";
 		}
+	}
+
+	/*
+	 * 로그아웃
+	 * */
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String getLogout() throws Exception {
+
+		logger.info("Logout GET Controller >>>>>>>>>");
+
+		return "logout";
+	}
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String postLogout(Model model, MemberVO memberVO, HttpSession session) throws Exception {
+
+		logger.info("Logout POST Controller >>>>>>>>>");
+
+		return "logout";
 	}
 
 	/*
