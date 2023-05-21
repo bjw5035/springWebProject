@@ -10,7 +10,7 @@
     // 세션 값 가져오기: session.getAttribute(String name);
     // 인증된 세션이 없는경우, 해당페이지를 볼 수 없게 함.
     if (session.getAttribute("signedUser") == null) {
-        response.sendRedirect("logout.jsp");
+        response.sendRedirect("logout.html");
     }
 %>
 <html>

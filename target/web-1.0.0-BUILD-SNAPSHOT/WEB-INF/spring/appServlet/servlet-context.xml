@@ -29,8 +29,8 @@
 	<!-- prefix와 suffix에 등록된 value를 참조하여 /WEB-INF/views/파일명.jsp가 실행됨 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
-<!--		<beans:property name="suffix" value=".html" />-->
+<!--		<beans:property name="suffix" value=".jsp" />-->
+		<beans:property name="suffix" value=".html" />
 	</beans:bean>
 
 	<!-- 스캔할 bean들이 모여있는 패키지를 지정한다. -->

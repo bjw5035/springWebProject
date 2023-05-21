@@ -15,11 +15,11 @@
   String id = request.getParameter("userId");
   String pw = request.getParameter("userPw");
   // 2: 사용자 인증
-  String redirectUrl = "login.jsp"; // 인증 실패시 재요청 될 url
+  String redirectUrl = "login.html"; // 인증 실패시 재요청 될 url
 //  for (int i = 0; i < id.length; i++) {
 //    if (id[i].equals(id) && pw[i].equals(pw)) {
 //      session.setAttribute("signedUser", id); // 인증되었음 세션에 남김
-//      redirectUrl = "welcome.jsp"; // 인증 성공 시 재요청 url
+//      redirectUrl = "welcome.html"; // 인증 성공 시 재요청 url
 //    }
 //  }
   response.sendRedirect(redirectUrl);
