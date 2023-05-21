@@ -21,7 +21,7 @@
 
 	<label>나이:</label>
 	<input type="text" name="userAge"><br/>
-
+</form>
 <%--	<label>전화번호:</label>--%>
 <%--	<select name="phon1">--%>
 <%--		<option>010</option>--%>
