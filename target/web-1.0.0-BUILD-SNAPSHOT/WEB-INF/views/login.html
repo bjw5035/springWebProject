@@ -6,10 +6,9 @@
     <title>로그인</title>
     <script>
         function loginAlertBox() {
-            let LoginFormVal = document.getElementById('Login_Form');
             let id = document.getElementById('userId');
             let passwd = document.getElementById("userPw");
-            if (LoginFormVal.value === '') {
+            if (id.value === '' || passwd.value === '') {
                 alert("확인을 누를 때까지 다른 작업을 할 수 없어요!");
             } else {
                 return "/";

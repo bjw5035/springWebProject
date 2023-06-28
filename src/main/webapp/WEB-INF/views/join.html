@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
+  <SCRIPT>
+    function save_joindata() {
+      let id = $("userId").val();
+      let password = $("userPw").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/join",
+        data : {id_give: id, password_give: password}
+        success: function (response) {
+          alert(response["msg"]);
+          window.location.reload();
+        },
+      });
+    }</SCRIPT>
 </head>
 <body class="page-template-default page page-id-7 page-parent woocommerce theme-dokan woocommerce-account woocommerce-page woocommerce-no-js dokan-theme-dokan">
 

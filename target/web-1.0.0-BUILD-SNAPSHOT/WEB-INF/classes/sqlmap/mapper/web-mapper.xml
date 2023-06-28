@@ -54,7 +54,7 @@
 				    BOARD_NO,
 				    TITLE,
 				    CONTENTS,
-				    CREATED_TIME
+				    CREATE_TIME
 				)
 				VALUES
 				(
