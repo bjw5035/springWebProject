@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.myweb.board.vo.LogInVO" alias="LoginVO"/>
-		<typeAlias alias="MemberVO" type="com.myweb.board.vo.MemberVO" />
-		<typeAlias alias="MyModifyVO" type="com.myweb.board.vo.MyModifyVO" />
+		<typeAlias type="com.myweb.board.vo.LogInVO_bak" alias="LoginVO"/>
+<!--		<typeAlias alias="MemberVO" type="com.myweb.board.backFile.MemberVO" />-->
+		<typeAlias alias="MyModifyVO" type="com.myweb.board.vo.MyModifyVO_bak" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="/sqlmap/mapper/web-mapper.xml" />

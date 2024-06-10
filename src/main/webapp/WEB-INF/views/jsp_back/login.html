@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>로그인</title>
+    <script>
+        function loginAlertBox() {
+            let id = document.getElementById('userId');
+            let passwd = document.getElementById("userPw");
+            if (id.value === '' || passwd.value === '') {
+                alert("확인을 누를 때까지 다른 작업을 할 수 없어요!");
+            } else {
+                return "/";
+            }
+
+        }
+
+        // console.log(testId);
+    </script>
+</head>
+<body>
+<div style="float: none; margin: 0 auto;">
+    <form action="" name="LoginForm" method="post" id="Login_Form">
+        <label>ID</label>
+        <input type="text" name="userId" id="userId"><br>
+        <label>PW</label>
+        <input type="password" name="userPw" id="userPw"><br>
+
+        <!-- Form안에 들어가있지 않으면 작동을 하지 않음-->
+        <button class="btn-login" type="submit" id="login" onclick="loginAlertBox()">로그인</button>
+        <button type="button" onclick="location.href='join'">회원가입</button>
+        <button type="button" onclick="location.href='../../..'">메인</button>
+
+    </form>
+</div>
+</body>
+</html>

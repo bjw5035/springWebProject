@@ -25,7 +25,7 @@
 
 	<!-- 로그인 -->
 	<!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
-<!--	<select id="login" parameterType="com.myweb.board.vo.MemberVO" resultType="hashmap">-->
+<!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
 	<select id="login" parameterType="hashmap" resultType="String">
 		<![CDATA[
 		select *
